@@ -1,0 +1,107 @@
+{
+  "entityType" : "DEVICE",
+  "entity" : {
+    "additionalInfo" : {
+      "lastConnectedGateway" : "5454cf60-6bf1-11f0-b6be-41fe9fb9d81c"
+    },
+    "customerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "13814000-1dd2-11b2-8080-808080808080"
+    },
+    "deviceData" : {
+      "configuration" : {
+        "type" : "DEFAULT"
+      },
+      "transportConfiguration" : {
+        "type" : "DEFAULT"
+      }
+    },
+    "deviceProfileId" : {
+      "entityType" : "DEVICE_PROFILE",
+      "id" : "206d5860-6bf2-11f0-b6be-41fe9fb9d81c"
+    },
+    "externalId" : null,
+    "firmwareId" : null,
+    "id" : {
+      "entityType" : "DEVICE",
+      "id" : "5a0481d0-6c00-11f0-b6be-41fe9fb9d81c"
+    },
+    "label" : "Salida UPS #23",
+    "name" : "CPM50-4",
+    "ownerId" : null,
+    "softwareId" : null,
+    "type" : "CPMDevice"
+  },
+  "credentials" : {
+    "credentialsId" : "QeHm9ZUyHNalMpdPaFid",
+    "credentialsType" : "ACCESS_TOKEN",
+    "credentialsValue" : null
+  },
+  "relations" : [ {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "DEVICE",
+      "id" : "5454cf60-6bf1-11f0-b6be-41fe9fb9d81c"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "5a0481d0-6c00-11f0-b6be-41fe9fb9d81c"
+    },
+    "type" : "Created",
+    "typeGroup" : "COMMON",
+    "version" : 632
+  } ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ {
+      "booleanValue" : true,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "active",
+      "lastUpdateTs" : 1758574430415,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "inactivityAlarmTime",
+      "lastUpdateTs" : 1758571470259,
+      "longValue" : 1758571470258,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "lastActivityTime",
+      "lastUpdateTs" : 1762288634027,
+      "longValue" : 1762288632641,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "lastConnectTime",
+      "lastUpdateTs" : 1762288601415,
+      "longValue" : 1762288601415,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "lastDisconnectTime",
+      "lastUpdateTs" : 1762288601291,
+      "longValue" : 1762288601291,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : "{\"v_superior\":132,\"v_inferior\":108,\"v_levelsAlarm\":[{\"min\":102,\"max\":108,\"level\":\"WARNING\"},{\"min\":0,\"max\":102,\"level\":\"CRITICAL\"},{\"min\":132,\"max\":144,\"level\":\"WARNING\"},{\"min\":144,\"max\":1000000,\"level\":\"CRITICAL\"}],\"c_superior\":12.8,\"c_inferior\":1,\"c_levelsAlarm\":[{\"min\":0,\"max\":1,\"level\":\"WARNING\"},{\"min\":-1,\"max\":0,\"level\":\"CRITICAL\"},{\"min\":12.8,\"max\":15.2,\"level\":\"WARNING\"},{\"min\":15.2,\"max\":1000000,\"level\":\"CRITICAL\"}]}",
+      "key" : "umbrales",
+      "lastUpdateTs" : 1754601595831,
+      "longValue" : null,
+      "strValue" : null
+    } ],
+    "SHARED_SCOPE" : [ ]
+  },
+  "calculatedFields" : [ ]
+}

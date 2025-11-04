@@ -1,0 +1,86 @@
+{
+  "entityType" : "RULE_CHAIN",
+  "entity" : {
+    "additionalInfo" : {
+      "description" : ""
+    },
+    "configuration" : null,
+    "debugMode" : false,
+    "externalId" : null,
+    "firstRuleNodeId" : {
+      "entityType" : "RULE_NODE",
+      "id" : "c72f8b60-6c0a-11f0-b6be-41fe9fb9d81c"
+    },
+    "id" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "849ab6d0-6c0a-11f0-b6be-41fe9fb9d81c"
+    },
+    "name" : "ADC",
+    "root" : false,
+    "type" : "CORE"
+  },
+  "metaData" : {
+    "connections" : [ {
+      "fromIndex" : 0,
+      "toIndex" : 1,
+      "type" : "Success"
+    } ],
+    "firstNodeIndex" : 0,
+    "nodes" : [ {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 299,
+        "layoutY" : 150
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "function obtenerPorcentaje(sensorValor) {\n    var calibracion = [\n        [737, 0],\n        [1825, 25],\n        [3653, 50],\n        [5476, 75],\n        [7305, 100]\n    ];\n\n    for (var i = 0; i < calibracion.length - 1; i++) {\n        var x0 = calibracion[i][0];\n        var y0 = calibracion[i][1];\n        var x1 = calibracion[i + 1][0];\n        var y1 = calibracion[i + 1][1];\n\n        if (sensorValor >= x0 && sensorValor <= x1) {\n            var porcentaje = y0 + ((sensorValor - x0) / (x1 - x0)) * (y1 - y0);\n            return Math.round(porcentaje * 100) / 100; // Redondea a 2 decimales\n        }\n    }\n\n    // Fuera de rango\n    if (sensorValor < calibracion[0][0]) {\n        return 0.0;\n    } else if (sensorValor > calibracion[calibracion.length - 1][0]) {\n        return 100.0;\n    }\n}\n\nmsg = {\n    \"valor\": msg.pv,\n    \"porcentaje\": obtenerPorcentaje(msg.pv)\n}\n\n\nreturn {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : null,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "c72f8b60-6c0a-11f0-b6be-41fe9fb9d81c"
+      },
+      "name" : "Formula%ADC",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 552,
+        "layoutY" : 150
+      },
+      "configuration" : {
+        "defaultTTL" : 0,
+        "useServerTs" : false,
+        "processingSettings" : {
+          "type" : "ON_EVERY_MESSAGE"
+        }
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugSettings" : null,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "c72fb270-6c0a-11f0-b6be-41fe9fb9d81c"
+      },
+      "name" : "SaveTimeSeries",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
+    } ],
+    "ruleChainConnections" : null
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

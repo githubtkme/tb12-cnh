@@ -1,0 +1,581 @@
+{
+  "entityType" : "RULE_CHAIN",
+  "entity" : {
+    "additionalInfo" : {
+      "description" : ""
+    },
+    "configuration" : null,
+    "debugMode" : false,
+    "externalId" : null,
+    "firstRuleNodeId" : {
+      "entityType" : "RULE_NODE",
+      "id" : "47762a00-73d5-11f0-b6be-41fe9fb9d81c"
+    },
+    "id" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "476699a0-73d5-11f0-b6be-41fe9fb9d81c"
+    },
+    "name" : "Procesamiento y almacenaje de datos dispositivos_GATEWAY",
+    "root" : false,
+    "type" : "CORE"
+  },
+  "metaData" : {
+    "connections" : [ {
+      "fromIndex" : 0,
+      "toIndex" : 14,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 10,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 2,
+      "toIndex" : 3,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 3,
+      "toIndex" : 4,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 4,
+      "toIndex" : 5,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 5,
+      "toIndex" : 6,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 6,
+      "toIndex" : 7,
+      "type" : "False"
+    }, {
+      "fromIndex" : 6,
+      "toIndex" : 8,
+      "type" : "True"
+    }, {
+      "fromIndex" : 8,
+      "toIndex" : 9,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 9,
+      "toIndex" : 0,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 10,
+      "toIndex" : 12,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 12,
+      "toIndex" : 13,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 13,
+      "toIndex" : 11,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 14,
+      "toIndex" : 15,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 15,
+      "toIndex" : 1,
+      "type" : "True"
+    }, {
+      "fromIndex" : 15,
+      "toIndex" : 16,
+      "type" : "False"
+    } ],
+    "firstNodeIndex" : 2,
+    "nodes" : [ {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 2000,
+        "layoutY" : 149
+      },
+      "configuration" : {
+        "dataToFetch" : "ATTRIBUTES",
+        "dataMapping" : {
+          "acondicionamientoGATEWAY" : "acondicionamientoGATEWAY",
+          "datosRequeridosGATEWAY" : "datosRequeridosGATEWAY"
+        },
+        "fetchTo" : "METADATA"
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 1749746739038,
+        "failuresEnabled" : false
+      },
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "4775dbe0-73d5-11f0-b6be-41fe9fb9d81c"
+      },
+      "name" : "getProcesamiento",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetTenantAttributeNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 2728,
+        "layoutY" : 150
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "var nameDevive = metadata.deviceName.split(\"-\");\nvar procesamiento = JSON.parse(metadata.acondicionamientoGATEWAY);\n\nfunction procesarMediciones(mediciones, operaciones) {\n    var resultado = {};\n\n    for (var clave in mediciones) {\n        if (operaciones[clave]) {\n            try {\n                var valor = mediciones[clave];\n                \n                // Verificar qué operación realizar\n                if (operaciones[clave] === \"truncate\") {\n                    // Truncar a 2 decimales\n                    resultado[clave] = Math.floor(valor * 100) / 100;\n                } else if (operaciones[clave] === \"round\") {\n                    // Redondear a 2 decimales\n                    resultado[clave] = Math.round(valor * 100) / 100;\n                } else {\n                    // Si no es ninguna de las operaciones anteriores, aplicar operación matemática\n                    resultado[clave] = eval(valor + operaciones[clave]);\n                }\n                \n                // Se usa eval() para evaluar la operación sobre el valor\n                //resultado[clave] = eval(mediciones[clave] + operaciones[clave]);\n            } catch (error) {\n                resultado[clave] = mediciones[clave]; // En caso de error, mantener el valor original\n            }\n        } else {\n            resultado[clave] = mediciones[clave]; // Si no hay operación, dejar el valor igual\n        }\n    }\n    \n    return resultado;\n}\n\nif(procesamiento[nameDevive[0]] !== undefined){\n    msg = procesarMediciones(msg, procesamiento[nameDevive[0]])\n}\n\ndelete metadata.acondicionamientoGATEWAY;\ndelete metadata.datosRequeridosGATEWAY;\n\nreturn {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 0,
+        "failuresEnabled" : false
+      },
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "477602f0-73d5-11f0-b6be-41fe9fb9d81c"
+      },
+      "name" : "acondicionarDatos",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 275,
+        "layoutY" : 150
+      },
+      "configuration" : {
+        "fetchTo" : "METADATA"
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugSettings" : null,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "47762a00-73d5-11f0-b6be-41fe9fb9d81c"
+      },
+      "name" : "obtenerTokenDispositivo",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.metadata.TbFetchDeviceCredentialsNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 525,
+        "layoutY" : 151
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "metadata.token = metadata.credentials;\n\ndelete metadata.credentials;\ndelete metadata.credentialsType;\n\nreturn {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 0,
+        "failuresEnabled" : false
+      },
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "47765110-73d5-11f0-b6be-41fe9fb9d81c"
+      },
+      "name" : "apendizarToken",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 774,
+        "layoutY" : 150
+      },
+      "configuration" : {
+        "dataToFetch" : "ATTRIBUTES",
+        "dataMapping" : {
+          "dispositivosGATEWAY" : "dispositivos",
+          "sitios" : "sitios",
+          "numSitios" : "numSitios"
+        },
+        "fetchTo" : "METADATA"
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugSettings" : null,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "47765111-73d5-11f0-b6be-41fe9fb9d81c"
+      },
+      "name" : "sitiosDispositivosTenant",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetTenantAttributeNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1026,
+        "layoutY" : 150
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "function validarSiExisteDispositivo(token, dispositivos){\n    dispositivos = dispositivos[\"GATEWAY\"];\n\n    for (var key in dispositivos) {\n        if (dispositivos.hasOwnProperty(key)) {\n            var items = dispositivos[key];\n\n            if (Array.isArray(items)) {\n                for (var i = 0; i < items.length; i++) {\n                    if (items[i] === token) {\n                        var data = {\n                            dispositivo: \"GATEWAY\",\n                            tipoDispositivo: key,\n                            posicion: i,\n                            token: token\n                        };\n                        \n                        return data;\n                    }\n                }\n            } else {\n                for (var subKey in items) {\n                    if (items.hasOwnProperty(subKey)) {\n                        var subItems = items[subKey];\n                        for (var j = 0; j < subItems.length; j++) {\n                            if (subItems[j] === token) {\n                                var data = {\n                                    dispositivo: \"GATEWAY\",\n                                    tipoDispositivo: key,\n                                    posicion: j,\n                                    subTipo: subKey,\n                                    token: token\n                                };\n                                \n                                return data;\n                            }\n                        }\n                    }\n                }\n            }\n        }\n    }\n    \n    \n    return false;\n}\n\nfunction buscarDispositivoSitio(token, sitios){\n    if(sitios[token] !== undefined){\n        return sitios[token];\n    }\n\n    return false;\n}\n\nvar config = JSON.parse(metadata.dispositivos);\nvar sitios = JSON.parse(metadata.sitios);\n\nvar dispositivo = validarSiExisteDispositivo(metadata.token, config);\nif(!dispositivo){\n    var newMetadata = {\n        'deviceType': metadata.deviceType,\n        'deviceName': metadata.deviceName,\n        'ts': metadata.ts\n    };\n    \n    var newMSG = {\n        'error_nodo': \"NoExisteDispositivoEnDispositivos\",\n        'error_msg' : msg,\n        'error_metadata' : newMetadata\n    };\n    \n    return {msg: newMSG, metadata: newMetadata, msgType: msgType};\n}\n\ndispositivo[\"sitios\"] = parseInt(metadata.numSitios);\n\nvar informacionSitio = buscarDispositivoSitio(dispositivo.token, sitios);\nif(!informacionSitio){\n    var newMetadata = {\n        'deviceType': metadata.deviceType,\n        'deviceName': metadata.deviceName,\n        'ts': metadata.ts\n    };\n    \n    var newMSG = {\n        'error_nodo': \"NoExisteDispositivoEnSitio\",\n        'error_msg' : msg,\n        'error_metadata' : newMetadata\n    };\n    \n    return {msg: newMSG, metadata: newMetadata, msgType: msgType};\n}\n\ndispositivo[\"nombreSitio\"] = informacionSitio;\n\nmetadata.dispositivo = JSON.stringify(dispositivo);\n\ndelete metadata.token;\ndelete metadata.dispositivos;\ndelete metadata.sitios;\ndelete metadata.numSitios;\n\nreturn {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 1750899036115,
+        "failuresEnabled" : false
+      },
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "47767820-73d5-11f0-b6be-41fe9fb9d81c"
+      },
+      "name" : "validarSiElDispositivoExisteEnLosObjetosDeConfiguracion",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1275,
+        "layoutY" : 150
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "return (msg.error_nodo === undefined);",
+        "tbelScript" : "return msg.temperature > 20;"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 0,
+        "failuresEnabled" : false
+      },
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "47767821-73d5-11f0-b6be-41fe9fb9d81c"
+      },
+      "name" : "dispositivoValido",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1500,
+        "layoutY" : 24
+      },
+      "configuration" : {
+        "defaultTTL" : 0,
+        "useServerTs" : false,
+        "processingSettings" : {
+          "type" : "ON_EVERY_MESSAGE"
+        }
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugSettings" : null,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "47769f30-73d5-11f0-b6be-41fe9fb9d81c"
+      },
+      "name" : "ContabilizarDatosInvalido",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1500,
+        "layoutY" : 150
+      },
+      "configuration" : {
+        "tellFailureIfAbsent" : false,
+        "fetchTo" : "METADATA",
+        "clientAttributeNames" : [ ],
+        "sharedAttributeNames" : [ ],
+        "serverAttributeNames" : [ "umbrales", "histeresis", "acondicionar" ],
+        "latestTsKeyNames" : [ ],
+        "getLatestValueWithTs" : false
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 1750900513857,
+        "failuresEnabled" : false
+      },
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "4776c640-73d5-11f0-b6be-41fe9fb9d81c"
+      },
+      "name" : "datosExclusivos",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1750,
+        "layoutY" : 149
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "var dispositivo = JSON.parse(metadata.dispositivo);\n\nif(metadata.ss_histeresis !== undefined){\n    dispositivo.histeresis = JSON.parse(metadata.ss_histeresis);\n}\n\nif(metadata.ss_umbrales !== undefined){\n    dispositivo.umbrales = JSON.parse(metadata.ss_umbrales);\n}\n\nif(metadata.ss_acondicionar !== undefined){\n    dispositivo.acondicionar = JSON.parse(metadata.ss_acondicionar);\n}\n\nmetadata.dispositivo = JSON.stringify(dispositivo);\n\ndelete metadata.ss_histeresis;\ndelete metadata.ss_umbrales;\ndelete metadata.ss_acondicionar;\ndelete metadata.ss_alias;\n\nreturn {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "var dispositivo = JSON.parse(metadata.dispositivo);\n\nif(metadata.ss_histeresis !== undefined){\n    dispositivo.histeresis = JSON.parse(metadata.ss_histeresis);\n}\n\nif(metadata.ss_umbrales !== undefined){\n    dispositivo.umbrales = JSON.parse(metadata.ss_umbrales);\n}\n\nif(metadata.ss_acondicionar !== undefined){\n    dispositivo.acondicionar = JSON.parse(metadata.ss_acondicionar);\n}\n\nif(metadata.ss_alias !== undefined){\n    dispositivo.alias = metadata.ss_alias;\n}\n\nmetadata.dispositivo = JSON.stringify(dispositivo);\n\ndelete metadata.ss_histeresis;\ndelete metadata.ss_umbrales;\ndelete metadata.ss_acondicionar;\ndelete metadata.ss_alias;\n\nreturn {msg: msg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 0,
+        "failuresEnabled" : false
+      },
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "4776ed50-73d5-11f0-b6be-41fe9fb9d81c"
+      },
+      "name" : "agregarDatosExclusivos",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 2979,
+        "layoutY" : 152
+      },
+      "configuration" : {
+        "defaultTTL" : 0,
+        "useServerTs" : false,
+        "processingSettings" : {
+          "type" : "ON_EVERY_MESSAGE"
+        }
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 0,
+        "failuresEnabled" : false
+      },
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "4776ed51-73d5-11f0-b6be-41fe9fb9d81c"
+      },
+      "name" : "saveTimeseries",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 3728,
+        "layoutY" : 151
+      },
+      "configuration" : {
+        "forwardMsgToDefaultRuleChain" : false,
+        "ruleChainId" : "4caefc90-73d5-11f0-b6be-41fe9fb9d81c"
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugSettings" : null,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "47771460-73d5-11f0-b6be-41fe9fb9d81c"
+      },
+      "name" : "Generación de alarmas dispositivos_GATEWAY",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 3229,
+        "layoutY" : 151
+      },
+      "configuration" : {
+        "dataMapping" : {
+          "label" : "label"
+        },
+        "ignoreNullStrings" : false,
+        "fetchTo" : "METADATA"
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugSettings" : null,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "47771461-73d5-11f0-b6be-41fe9fb9d81c"
+      },
+      "name" : "agregarEtiqueta",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetOriginatorFieldsNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 3478,
+        "layoutY" : 151
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "var dispositivo = JSON.parse(metadata.dispositivo);\n\ndispositivo.label = metadata.label;\nmetadata.dispositivo = JSON.stringify(dispositivo);\n\ndelete metadata.label;\nreturn {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 0,
+        "failuresEnabled" : false
+      },
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "47771462-73d5-11f0-b6be-41fe9fb9d81c"
+      },
+      "name" : "agregarEtiqueta",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 2250,
+        "layoutY" : 150
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "var datosRequeridos = JSON.parse(metadata.datosRequeridosGATEWAY);\nvar nameDevive = metadata.deviceName.split(\"-\");\n\nvar band = true;\n\nif(datosRequeridos[nameDevive[0]] !== undefined){\n    datosRequeridos = datosRequeridos[nameDevive[0]];\n    for(var i = 0; i < datosRequeridos.length; i++){\n        if(msg[datosRequeridos[i]] === undefined){\n            band = false;\n        }\n    }\n}\n\nif(!band){\n    var newMetadata = {\n        'deviceType': metadata.deviceType,\n        'deviceName': metadata.deviceName,\n        'ts': metadata.ts\n    };\n    \n    var newMSG = {\n        'error_nodo': \"datosRequeridos\",\n        'error_msg' : msg,\n        'error_metadata' : newMetadata\n    };\n    \n    return {msg: newMSG, metadata: newMetadata, msgType: msgType};\n}\n\nreturn {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 1754594560118,
+        "failuresEnabled" : false
+      },
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "47773b70-73d5-11f0-b6be-41fe9fb9d81c"
+      },
+      "name" : "datosRequeridos",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 2500,
+        "layoutY" : 150
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "return (msg.error_nodo === undefined);",
+        "tbelScript" : "return msg.temperature > 20;"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 1754594895554,
+        "failuresEnabled" : false
+      },
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "47773b71-73d5-11f0-b6be-41fe9fb9d81c"
+      },
+      "name" : "dispositivoValido",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 2732,
+        "layoutY" : 9
+      },
+      "configuration" : {
+        "defaultTTL" : 0,
+        "useServerTs" : false,
+        "processingSettings" : {
+          "type" : "ON_EVERY_MESSAGE"
+        }
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 0,
+        "failuresEnabled" : false
+      },
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "47773b72-73d5-11f0-b6be-41fe9fb9d81c"
+      },
+      "name" : "ContabilizarDatosInvalido",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
+    } ],
+    "ruleChainConnections" : null
+  },
+  "relations" : [ {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "476699a0-73d5-11f0-b6be-41fe9fb9d81c"
+    },
+    "to" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "4caefc90-73d5-11f0-b6be-41fe9fb9d81c"
+    },
+    "type" : "Uses",
+    "typeGroup" : "COMMON",
+    "version" : 2789
+  } ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "entityType" : "DEVICE",
+  "entity" : {
+    "additionalInfo" : {
+      "lastConnectedGateway" : "5454cf60-6bf1-11f0-b6be-41fe9fb9d81c"
+    },
+    "customerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "13814000-1dd2-11b2-8080-808080808080"
+    },
+    "deviceData" : {
+      "configuration" : {
+        "type" : "DEFAULT"
+      },
+      "transportConfiguration" : {
+        "type" : "DEFAULT"
+      }
+    },
+    "deviceProfileId" : {
+      "entityType" : "DEVICE_PROFILE",
+      "id" : "206d5860-6bf2-11f0-b6be-41fe9fb9d81c"
+    },
+    "externalId" : null,
+    "firmwareId" : null,
+    "id" : {
+      "entityType" : "DEVICE",
+      "id" : "3e0a2f20-6c00-11f0-b6be-41fe9fb9d81c"
+    },
+    "label" : "Tablero General de Emergencia #22",
+    "name" : "CPM50-3",
+    "ownerId" : null,
+    "softwareId" : null,
+    "type" : "CPMDevice"
+  },
+  "credentials" : {
+    "credentialsId" : "S8HcdBv4s5tYPobIwybL",
+    "credentialsType" : "ACCESS_TOKEN",
+    "credentialsValue" : null
+  },
+  "relations" : [ {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "DEVICE",
+      "id" : "5454cf60-6bf1-11f0-b6be-41fe9fb9d81c"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "3e0a2f20-6c00-11f0-b6be-41fe9fb9d81c"
+    },
+    "type" : "Created",
+    "typeGroup" : "COMMON",
+    "version" : 630
+  } ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ {
+      "booleanValue" : true,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "active",
+      "lastUpdateTs" : 1758574430113,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "inactivityAlarmTime",
+      "lastUpdateTs" : 1758571470259,
+      "longValue" : 1758571470258,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "lastActivityTime",
+      "lastUpdateTs" : 1762288646018,
+      "longValue" : 1762288643168,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "lastConnectTime",
+      "lastUpdateTs" : 1762288507638,
+      "longValue" : 1762288507638,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "lastDisconnectTime",
+      "lastUpdateTs" : 1762288507507,
+      "longValue" : 1762288507507,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : "{\"v_superior\":139.7,\"v_inferior\":114.3,\"v_levelsAlarm\":[{\"min\":107.95,\"max\":114.3,\"level\":\"WARNING\"},{\"min\":0,\"max\":107.95,\"level\":\"CRITICAL\"},{\"min\":139.7,\"max\":152.4,\"level\":\"WARNING\"},{\"min\":152.4,\"max\":1000000,\"level\":\"CRITICAL\"}],\"c_superior\":36.8,\"c_inferior\":1,\"c_levelsAlarm\":[{\"min\":0,\"max\":1,\"level\":\"WARNING\"},{\"min\":-1,\"max\":0,\"level\":\"CRITICAL\"},{\"min\":36.8,\"max\":43.7,\"level\":\"WARNING\"},{\"min\":43.7,\"max\":1000000,\"level\":\"CRITICAL\"}]}",
+      "key" : "umbrales",
+      "lastUpdateTs" : 1754601510896,
+      "longValue" : null,
+      "strValue" : null
+    } ],
+    "SHARED_SCOPE" : [ ]
+  },
+  "calculatedFields" : [ ]
+}

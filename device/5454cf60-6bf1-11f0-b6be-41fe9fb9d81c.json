@@ -1,0 +1,228 @@
+{
+  "entityType" : "DEVICE",
+  "entity" : {
+    "additionalInfo" : {
+      "gateway" : true
+    },
+    "customerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "13814000-1dd2-11b2-8080-808080808080"
+    },
+    "deviceData" : {
+      "configuration" : {
+        "type" : "DEFAULT"
+      },
+      "transportConfiguration" : {
+        "type" : "DEFAULT"
+      }
+    },
+    "deviceProfileId" : {
+      "entityType" : "DEVICE_PROFILE",
+      "id" : "97e26690-69a6-11f0-b6be-41fe9fb9d81c"
+    },
+    "externalId" : null,
+    "firmwareId" : null,
+    "id" : {
+      "entityType" : "DEVICE",
+      "id" : "5454cf60-6bf1-11f0-b6be-41fe9fb9d81c"
+    },
+    "label" : "",
+    "name" : "IoTGateway",
+    "ownerId" : null,
+    "softwareId" : null,
+    "type" : "default"
+  },
+  "credentials" : {
+    "credentialsId" : "YPb1TksL5NbShr9muDiI",
+    "credentialsType" : "ACCESS_TOKEN",
+    "credentialsValue" : null
+  },
+  "relations" : [ {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "DEVICE",
+      "id" : "5454cf60-6bf1-11f0-b6be-41fe9fb9d81c"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "84e5e810-6bf3-11f0-b6be-41fe9fb9d81c"
+    },
+    "type" : "Created",
+    "typeGroup" : "COMMON",
+    "version" : 610
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "DEVICE",
+      "id" : "5454cf60-6bf1-11f0-b6be-41fe9fb9d81c"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "f9f01a20-6bff-11f0-b6be-41fe9fb9d81c"
+    },
+    "type" : "Created",
+    "typeGroup" : "COMMON",
+    "version" : 626
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "DEVICE",
+      "id" : "5454cf60-6bf1-11f0-b6be-41fe9fb9d81c"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "020b2610-6bf5-11f0-b6be-41fe9fb9d81c"
+    },
+    "type" : "Created",
+    "typeGroup" : "COMMON",
+    "version" : 612
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "DEVICE",
+      "id" : "5454cf60-6bf1-11f0-b6be-41fe9fb9d81c"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "1e4ae530-6c00-11f0-b6be-41fe9fb9d81c"
+    },
+    "type" : "Created",
+    "typeGroup" : "COMMON",
+    "version" : 628
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "DEVICE",
+      "id" : "5454cf60-6bf1-11f0-b6be-41fe9fb9d81c"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "3e0a2f20-6c00-11f0-b6be-41fe9fb9d81c"
+    },
+    "type" : "Created",
+    "typeGroup" : "COMMON",
+    "version" : 630
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "DEVICE",
+      "id" : "5454cf60-6bf1-11f0-b6be-41fe9fb9d81c"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "5a0481d0-6c00-11f0-b6be-41fe9fb9d81c"
+    },
+    "type" : "Created",
+    "typeGroup" : "COMMON",
+    "version" : 632
+  } ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "active",
+      "lastUpdateTs" : 1758444388854,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "inactivityAlarmTime",
+      "lastUpdateTs" : 1758444388849,
+      "longValue" : 1758444388849,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "lastActivityTime",
+      "lastUpdateTs" : 1758443774014,
+      "longValue" : 1758443772115,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "lastConnectTime",
+      "lastUpdateTs" : 1757606068126,
+      "longValue" : 1757606068126,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "lastDisconnectTime",
+      "lastUpdateTs" : 1757606062921,
+      "longValue" : 1757606062921,
+      "strValue" : null
+    } ],
+    "SHARED_SCOPE" : [ {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : "{\"mode\":\"advanced\",\"name\":\"Modbus\",\"type\":\"modbus\",\"logLevel\":\"INFO\",\"configuration\":\"modbus.json\",\"configurationJson\":{\"master\":{\"slaves\":[{\"method\":\"rtu\",\"baudrate\":19200,\"stopbits\":1,\"bytesize\":8,\"parity\":\"N\",\"strict\":false,\"unitId\":64,\"deviceName\":\"Torreta\",\"deviceType\":\"CPMDevice\",\"timeout\":2,\"byteOrder\":\"BIG\",\"wordOrder\":\"BIG\",\"retries\":false,\"retryOnEmpty\":false,\"retryOnInvalid\":false,\"pollPeriod\":5000,\"connectAttemptTimeMs\":500,\"connectAttemptCount\":1,\"waitAfterFailedAttemptsMs\":300,\"type\":\"serial\",\"attributes\":[],\"timeseries\":[{\"tag\":\"salida_1\",\"type\":\"bits\",\"address\":1,\"objectsCount\":1,\"functionCode\":1,\"bitTargetType\":\"int\"},{\"tag\":\"salida_2\",\"type\":\"bits\",\"address\":2,\"objectsCount\":1,\"functionCode\":1,\"bitTargetType\":\"int\"},{\"tag\":\"salida_3\",\"type\":\"bits\",\"address\":3,\"objectsCount\":1,\"functionCode\":1,\"bitTargetType\":\"int\"}],\"attributeUpdates\":[],\"rpc\":[{\"tag\":\"Verde\",\"type\":\"bits\",\"functionCode\":5,\"address\":1,\"objectsCount\":1},{\"tag\":\"Ambar\",\"type\":\"bits\",\"functionCode\":5,\"address\":2,\"objectsCount\":1},{\"tag\":\"Rojo\",\"type\":\"bits\",\"functionCode\":5,\"address\":3,\"objectsCount\":1}],\"port\":\"/dev/ttyUSB0\"},{\"method\":\"rtu\",\"baudrate\":19200,\"stopbits\":1,\"bytesize\":8,\"parity\":\"N\",\"strict\":false,\"unitId\":1,\"deviceName\":\"ADC\",\"deviceType\":\"CPMDevice\",\"timeout\":2,\"byteOrder\":\"BIG\",\"wordOrder\":\"BIG\",\"retries\":false,\"retryOnEmpty\":false,\"retryOnInvalid\":false,\"pollPeriod\":5000,\"connectAttemptTimeMs\":500,\"connectAttemptCount\":1,\"waitAfterFailedAttemptsMs\":300,\"type\":\"serial\",\"attributes\":[],\"timeseries\":[{\"tag\":\"pv\",\"type\":\"16uint\",\"address\":0,\"objectsCount\":2,\"functionCode\":3}],\"attributeUpdates\":[],\"rpc\":[],\"port\":\"/dev/ttyUSB0\"},{\"method\":\"rtu\",\"baudrate\":19200,\"stopbits\":2,\"bytesize\":8,\"parity\":\"N\",\"strict\":false,\"unitId\":20,\"deviceName\":\"CPM50-1\",\"deviceType\":\"CPMDevice\",\"timeout\":2,\"byteOrder\":\"BIG\",\"wordOrder\":\"BIG\",\"retries\":false,\"retryOnEmpty\":false,\"retryOnInvalid\":false,\"pollPeriod\":5000,\"connectAttemptTimeMs\":500,\"connectAttemptCount\":1,\"waitAfterFailedAttemptsMs\":300,\"type\":\"serial\",\"attributes\":[],\"timeseries\":[{\"tag\":\"frecuencia\",\"type\":\"16uint\",\"address\":304,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"voltaje_1\",\"type\":\"16uint\",\"address\":305,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"voltaje_2\",\"type\":\"16uint\",\"address\":306,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"voltaje_3\",\"type\":\"16uint\",\"address\":307,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"voltaje_promedio\",\"type\":\"16uint\",\"address\":308,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"voltaje_linea_12\",\"type\":\"16uint\",\"address\":309,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"voltaje_linea_23\",\"type\":\"16uint\",\"address\":310,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"voltaje_linea_31\",\"type\":\"16uint\",\"address\":311,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"voltaje_linea_promedio\",\"type\":\"16uint\",\"address\":312,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"corriente_1\",\"type\":\"16uint\",\"address\":313,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"corriente_2\",\"type\":\"16uint\",\"address\":314,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"corriente_3\",\"type\":\"16uint\",\"address\":315,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"corriente_promedio\",\"type\":\"16uint\",\"address\":316,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"corriente_neutro\",\"type\":\"16uint\",\"address\":317,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"potencia_activa_1\",\"type\":\"16uint\",\"address\":318,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"potencia_activa_2\",\"type\":\"16uint\",\"address\":319,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"potencia_activa_3\",\"type\":\"16uint\",\"address\":320,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"potencia_activa_total\",\"type\":\"16uint\",\"address\":321,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"potencia_reactiva_1\",\"type\":\"16uint\",\"address\":322,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"potencia_reactiva_2\",\"type\":\"16uint\",\"address\":323,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"potencia_reactiva_3\",\"type\":\"16uint\",\"address\":324,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"potencia_reactiva_total\",\"type\":\"16uint\",\"address\":325,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"potencia_aparente_1\",\"type\":\"16uint\",\"address\":326,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"potencia_aparente_2\",\"type\":\"16uint\",\"address\":327,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"potencia_aparente_3\",\"type\":\"16uint\",\"address\":328,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"potencia_aparente_total\",\"type\":\"16uint\",\"address\":329,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"factor_de_potencia_1\",\"type\":\"16uint\",\"address\":330,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"factor_de_potencia_2\",\"type\":\"16uint\",\"address\":331,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"factor_de_potencia_3\",\"type\":\"16uint\",\"address\":332,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"factor_de_potencia_promedio\",\"type\":\"16uint\",\"address\":333,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"desequilibrio_voltaje\",\"type\":\"16uint\",\"address\":334,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"desequilibrio_corriente\",\"type\":\"16uint\",\"address\":335,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"tipo_carga\",\"type\":\"16uint\",\"address\":336,\"objectsCount\":1,\"functionCode\":3},{\"tag\":\"demanda_potencia_activa\",\"type\":\"16uint\",\"address\":337,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"demanda_potencia_reactiva\",\"type\":\"16uint\",\"address\":338,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"demanda_potencia_aparente\",\"type\":\"16uint\",\"address\":339,\"objectsCount\":2,\"functionCode\":3}],\"attributeUpdates\":[],\"rpc\":[],\"port\":\"/dev/ttyUSB0\"},{\"method\":\"rtu\",\"baudrate\":19200,\"stopbits\":2,\"bytesize\":8,\"parity\":\"N\",\"strict\":false,\"unitId\":21,\"deviceName\":\"CPM50-2\",\"deviceType\":\"CPMDevice\",\"timeout\":2,\"byteOrder\":\"BIG\",\"wordOrder\":\"BIG\",\"retries\":false,\"retryOnEmpty\":false,\"retryOnInvalid\":false,\"pollPeriod\":5000,\"connectAttemptTimeMs\":500,\"connectAttemptCount\":1,\"waitAfterFailedAttemptsMs\":300,\"type\":\"serial\",\"attributes\":[],\"timeseries\":[{\"tag\":\"frecuencia\",\"type\":\"16uint\",\"address\":304,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"voltaje_1\",\"type\":\"16uint\",\"address\":305,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"voltaje_2\",\"type\":\"16uint\",\"address\":306,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"voltaje_3\",\"type\":\"16uint\",\"address\":307,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"voltaje_promedio\",\"type\":\"16uint\",\"address\":308,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"voltaje_linea_12\",\"type\":\"16uint\",\"address\":309,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"voltaje_linea_23\",\"type\":\"16uint\",\"address\":310,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"voltaje_linea_31\",\"type\":\"16uint\",\"address\":311,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"voltaje_linea_promedio\",\"type\":\"16uint\",\"address\":312,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"corriente_1\",\"type\":\"16uint\",\"address\":313,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"corriente_2\",\"type\":\"16uint\",\"address\":314,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"corriente_3\",\"type\":\"16uint\",\"address\":315,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"corriente_promedio\",\"type\":\"16uint\",\"address\":316,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"corriente_neutro\",\"type\":\"16uint\",\"address\":317,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"potencia_activa_1\",\"type\":\"16uint\",\"address\":318,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"potencia_activa_2\",\"type\":\"16uint\",\"address\":319,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"potencia_activa_3\",\"type\":\"16uint\",\"address\":320,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"potencia_activa_total\",\"type\":\"16uint\",\"address\":321,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"potencia_reactiva_1\",\"type\":\"16uint\",\"address\":322,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"potencia_reactiva_2\",\"type\":\"16uint\",\"address\":323,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"potencia_reactiva_3\",\"type\":\"16uint\",\"address\":324,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"potencia_reactiva_total\",\"type\":\"16uint\",\"address\":325,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"potencia_aparente_1\",\"type\":\"16uint\",\"address\":326,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"potencia_aparente_2\",\"type\":\"16uint\",\"address\":327,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"potencia_aparente_3\",\"type\":\"16uint\",\"address\":328,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"potencia_aparente_total\",\"type\":\"16uint\",\"address\":329,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"factor_de_potencia_1\",\"type\":\"16uint\",\"address\":330,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"factor_de_potencia_2\",\"type\":\"16uint\",\"address\":331,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"factor_de_potencia_3\",\"type\":\"16uint\",\"address\":332,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"factor_de_potencia_promedio\",\"type\":\"16uint\",\"address\":333,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"desequilibrio_voltaje\",\"type\":\"16uint\",\"address\":334,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"desequilibrio_corriente\",\"type\":\"16uint\",\"address\":335,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"tipo_carga\",\"type\":\"16uint\",\"address\":336,\"objectsCount\":1,\"functionCode\":3},{\"tag\":\"demanda_potencia_activa\",\"type\":\"16uint\",\"address\":337,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"demanda_potencia_reactiva\",\"type\":\"16uint\",\"address\":338,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"demanda_potencia_aparente\",\"type\":\"16uint\",\"address\":339,\"objectsCount\":2,\"functionCode\":3}],\"attributeUpdates\":[],\"rpc\":[],\"port\":\"/dev/ttyUSB0\"},{\"method\":\"rtu\",\"baudrate\":19200,\"stopbits\":2,\"bytesize\":8,\"parity\":\"N\",\"strict\":false,\"unitId\":22,\"deviceName\":\"CPM50-3\",\"deviceType\":\"CPMDevice\",\"timeout\":2,\"byteOrder\":\"BIG\",\"wordOrder\":\"BIG\",\"retries\":false,\"retryOnEmpty\":false,\"retryOnInvalid\":false,\"pollPeriod\":5000,\"connectAttemptTimeMs\":500,\"connectAttemptCount\":1,\"waitAfterFailedAttemptsMs\":300,\"type\":\"serial\",\"attributes\":[],\"timeseries\":[{\"tag\":\"frecuencia\",\"type\":\"16uint\",\"address\":304,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"voltaje_1\",\"type\":\"16uint\",\"address\":305,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"voltaje_2\",\"type\":\"16uint\",\"address\":306,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"voltaje_3\",\"type\":\"16uint\",\"address\":307,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"voltaje_promedio\",\"type\":\"16uint\",\"address\":308,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"voltaje_linea_12\",\"type\":\"16uint\",\"address\":309,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"voltaje_linea_23\",\"type\":\"16uint\",\"address\":310,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"voltaje_linea_31\",\"type\":\"16uint\",\"address\":311,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"voltaje_linea_promedio\",\"type\":\"16uint\",\"address\":312,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"corriente_1\",\"type\":\"16uint\",\"address\":313,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"corriente_2\",\"type\":\"16uint\",\"address\":314,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"corriente_3\",\"type\":\"16uint\",\"address\":315,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"corriente_promedio\",\"type\":\"16uint\",\"address\":316,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"corriente_neutro\",\"type\":\"16uint\",\"address\":317,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"potencia_activa_1\",\"type\":\"16uint\",\"address\":318,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"potencia_activa_2\",\"type\":\"16uint\",\"address\":319,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"potencia_activa_3\",\"type\":\"16uint\",\"address\":320,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"potencia_activa_total\",\"type\":\"16uint\",\"address\":321,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"potencia_reactiva_1\",\"type\":\"16uint\",\"address\":322,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"potencia_reactiva_2\",\"type\":\"16uint\",\"address\":323,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"potencia_reactiva_3\",\"type\":\"16uint\",\"address\":324,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"potencia_reactiva_total\",\"type\":\"16uint\",\"address\":325,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"potencia_aparente_1\",\"type\":\"16uint\",\"address\":326,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"potencia_aparente_2\",\"type\":\"16uint\",\"address\":327,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"potencia_aparente_3\",\"type\":\"16uint\",\"address\":328,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"potencia_aparente_total\",\"type\":\"16uint\",\"address\":329,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"factor_de_potencia_1\",\"type\":\"16uint\",\"address\":330,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"factor_de_potencia_2\",\"type\":\"16uint\",\"address\":331,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"factor_de_potencia_3\",\"type\":\"16uint\",\"address\":332,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"factor_de_potencia_promedio\",\"type\":\"16uint\",\"address\":333,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"desequilibrio_voltaje\",\"type\":\"16uint\",\"address\":334,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"desequilibrio_corriente\",\"type\":\"16uint\",\"address\":335,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"tipo_carga\",\"type\":\"16uint\",\"address\":336,\"objectsCount\":1,\"functionCode\":3},{\"tag\":\"demanda_potencia_activa\",\"type\":\"16uint\",\"address\":337,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"demanda_potencia_reactiva\",\"type\":\"16uint\",\"address\":338,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"demanda_potencia_aparente\",\"type\":\"16uint\",\"address\":339,\"objectsCount\":2,\"functionCode\":3}],\"attributeUpdates\":[],\"rpc\":[],\"port\":\"/dev/ttyUSB0\"},{\"method\":\"rtu\",\"baudrate\":19200,\"stopbits\":2,\"bytesize\":8,\"parity\":\"N\",\"strict\":false,\"unitId\":23,\"deviceName\":\"CPM50-4\",\"deviceType\":\"CPMDevice\",\"timeout\":2,\"byteOrder\":\"BIG\",\"wordOrder\":\"BIG\",\"retries\":false,\"retryOnEmpty\":false,\"retryOnInvalid\":false,\"pollPeriod\":5000,\"connectAttemptTimeMs\":500,\"connectAttemptCount\":1,\"waitAfterFailedAttemptsMs\":300,\"type\":\"serial\",\"attributes\":[],\"timeseries\":[{\"tag\":\"frecuencia\",\"type\":\"16uint\",\"address\":304,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"voltaje_1\",\"type\":\"16uint\",\"address\":305,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"voltaje_2\",\"type\":\"16uint\",\"address\":306,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"voltaje_3\",\"type\":\"16uint\",\"address\":307,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"voltaje_promedio\",\"type\":\"16uint\",\"address\":308,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"voltaje_linea_12\",\"type\":\"16uint\",\"address\":309,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"voltaje_linea_23\",\"type\":\"16uint\",\"address\":310,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"voltaje_linea_31\",\"type\":\"16uint\",\"address\":311,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"voltaje_linea_promedio\",\"type\":\"16uint\",\"address\":312,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"corriente_1\",\"type\":\"16uint\",\"address\":313,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"corriente_2\",\"type\":\"16uint\",\"address\":314,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"corriente_3\",\"type\":\"16uint\",\"address\":315,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"corriente_promedio\",\"type\":\"16uint\",\"address\":316,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"corriente_neutro\",\"type\":\"16uint\",\"address\":317,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"potencia_activa_1\",\"type\":\"16uint\",\"address\":318,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"potencia_activa_2\",\"type\":\"16uint\",\"address\":319,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"potencia_activa_3\",\"type\":\"16uint\",\"address\":320,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"potencia_activa_total\",\"type\":\"16uint\",\"address\":321,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"potencia_reactiva_1\",\"type\":\"16uint\",\"address\":322,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"potencia_reactiva_2\",\"type\":\"16uint\",\"address\":323,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"potencia_reactiva_3\",\"type\":\"16uint\",\"address\":324,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"potencia_reactiva_total\",\"type\":\"16uint\",\"address\":325,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"potencia_aparente_1\",\"type\":\"16uint\",\"address\":326,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"potencia_aparente_2\",\"type\":\"16uint\",\"address\":327,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"potencia_aparente_3\",\"type\":\"16uint\",\"address\":328,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"potencia_aparente_total\",\"type\":\"16uint\",\"address\":329,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"factor_de_potencia_1\",\"type\":\"16uint\",\"address\":330,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"factor_de_potencia_2\",\"type\":\"16uint\",\"address\":331,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"factor_de_potencia_3\",\"type\":\"16uint\",\"address\":332,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"factor_de_potencia_promedio\",\"type\":\"16uint\",\"address\":333,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"desequilibrio_voltaje\",\"type\":\"16uint\",\"address\":334,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"desequilibrio_corriente\",\"type\":\"16uint\",\"address\":335,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"tipo_carga\",\"type\":\"16uint\",\"address\":336,\"objectsCount\":1,\"functionCode\":3},{\"tag\":\"demanda_potencia_activa\",\"type\":\"16uint\",\"address\":337,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"demanda_potencia_reactiva\",\"type\":\"16uint\",\"address\":338,\"objectsCount\":2,\"functionCode\":3},{\"tag\":\"demanda_potencia_aparente\",\"type\":\"16uint\",\"address\":339,\"objectsCount\":2,\"functionCode\":3}],\"attributeUpdates\":[],\"rpc\":[],\"port\":\"/dev/ttyUSB0\"}]},\"slave\":{\"type\":\"tcp\",\"host\":\"127.0.0.1\",\"port\":5026,\"method\":\"socket\",\"deviceName\":\"Modbus Slave Example\",\"deviceType\":\"default\",\"pollPeriod\":5000,\"sendDataToThingsBoard\":false,\"byteOrder\":\"LITTLE\",\"wordOrder\":\"LITTLE\",\"unitId\":0,\"values\":{\"holding_registers\":{\"attributes\":[{\"address\":1,\"type\":\"string\",\"tag\":\"sm\",\"objectsCount\":1,\"value\":\"ON\"}],\"timeseries\":[{\"address\":2,\"type\":\"8int\",\"tag\":\"smm\",\"objectsCount\":1,\"value\":\"12334\"}],\"attributeUpdates\":[{\"tag\":\"shared_attribute_write\",\"type\":\"32int\",\"functionCode\":6,\"objectsCount\":2,\"address\":29,\"value\":1243}],\"rpc\":[{\"tag\":\"setValue\",\"type\":\"bits\",\"functionCode\":5,\"objectsCount\":1,\"address\":31,\"value\":1}]},\"coils_initializer\":{\"attributes\":[{\"address\":5,\"type\":\"8int\",\"tag\":\"coil\",\"objectsCount\":1,\"value\":0}],\"timeseries\":[],\"attributeUpdates\":[],\"rpc\":[]}}},\"name\":\"Modbus\",\"enableRemoteLogging\":false,\"id\":\"69308ce1-dee8-4877-8677-a50d6922e4bf\"},\"configVersion\":\"3.6.1\",\"ts\":1757606045992}",
+      "key" : "Modbus",
+      "lastUpdateTs" : 1757606046388,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "RemoteLoggingLevel",
+      "lastUpdateTs" : 1753734478677,
+      "longValue" : null,
+      "strValue" : "NONE"
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : "[\"Modbus\"]",
+      "key" : "active_connectors",
+      "lastUpdateTs" : 1753734811559,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : "{\"host\":\"tb12.tkmecloud.io\",\"port\":1883,\"remoteShell\":false,\"remoteConfiguration\":true,\"checkConnectorsConfigurationInSeconds\":60,\"statistics\":{\"enable\":true,\"statsSendPeriodInSeconds\":3600,\"customStatsSendPeriodInSeconds\":3600,\"commands\":[]},\"maxPayloadSizeBytes\":8196,\"minPackSendDelayMS\":50,\"minPackSizeToSend\":500,\"handleDeviceRenaming\":true,\"checkingDeviceActivity\":{\"checkDeviceInactivity\":false,\"inactivityTimeoutSeconds\":300,\"inactivityCheckPeriodSeconds\":10},\"security\":{\"type\":\"accessToken\",\"accessToken\":\"YPb1TksL5NbShr9muDiI\"},\"qos\":1,\"ts\":1753734478523}",
+      "key" : "general_configuration",
+      "lastUpdateTs" : 1753734478677,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : "{\"enabled\":false,\"serverPort\":9595,\"keepAliveTimeMs\":10000,\"keepAliveTimeoutMs\":5000,\"keepalivePermitWithoutCalls\":true,\"maxPingsWithoutData\":0,\"minTimeBetweenPingsMs\":10000,\"minPingIntervalWithoutDataMs\":5000,\"ts\":1753734478523}",
+      "key" : "grpc_configuration",
+      "lastUpdateTs" : 1753734478677,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : "{\"version\":1,\"disable_existing_loggers\":false,\"formatters\":{\"LogFormatter\":{\"class\":\"logging.Formatter\",\"format\":\"%(asctime)s.%(msecs)03d - |%(levelname)s| - [%(filename)s] - %(module)s - %(funcName)s - %(lineno)d - %(message)s\",\"datefmt\":\"%Y-%m-%d %H:%M:%S\"}},\"handlers\":{\"consoleHandler\":{\"class\":\"logging.StreamHandler\",\"formatter\":\"LogFormatter\",\"level\":0,\"stream\":\"ext://sys.stdout\"},\"databaseHandler\":{\"class\":\"thingsboard_gateway.tb_utility.tb_handler.TimedRotatingFileHandler\",\"formatter\":\"LogFormatter\",\"filename\":\"./logs/database.log\",\"backupCount\":1,\"encoding\":\"utf-8\"},\"serviceHandler\":{\"class\":\"thingsboard_gateway.tb_utility.tb_handler.TimedRotatingFileHandler\",\"formatter\":\"LogFormatter\",\"filename\":\"./logs/service.log\",\"backupCount\":7,\"interval\":3,\"when\":\"D\",\"encoding\":\"utf-8\"},\"connectorHandler\":{\"class\":\"thingsboard_gateway.tb_utility.tb_handler.TimedRotatingFileHandler\",\"formatter\":\"LogFormatter\",\"filename\":\"./logs/connector.log\",\"backupCount\":7,\"interval\":3,\"when\":\"D\",\"encoding\":\"utf-8\"},\"converterHandler\":{\"class\":\"thingsboard_gateway.tb_utility.tb_handler.TimedRotatingFileHandler\",\"formatter\":\"LogFormatter\",\"filename\":\"./logs/converter.log\",\"backupCount\":7,\"interval\":3,\"when\":\"D\",\"encoding\":\"utf-8\"},\"tb_connectionHandler\":{\"class\":\"thingsboard_gateway.tb_utility.tb_handler.TimedRotatingFileHandler\",\"formatter\":\"LogFormatter\",\"filename\":\"./logs/tb_connection.log\",\"backupCount\":7,\"interval\":3,\"when\":\"D\",\"encoding\":\"utf-8\"},\"storageHandler\":{\"class\":\"thingsboard_gateway.tb_utility.tb_handler.TimedRotatingFileHandler\",\"formatter\":\"LogFormatter\",\"filename\":\"./logs/storage.log\",\"backupCount\":7,\"interval\":3,\"when\":\"D\",\"encoding\":\"utf-8\"},\"extensionHandler\":{\"class\":\"thingsboard_gateway.tb_utility.tb_handler.TimedRotatingFileHandler\",\"formatter\":\"LogFormatter\",\"filename\":\"./logs/extension.log\",\"backupCount\":7,\"interval\":3,\"when\":\"D\",\"encoding\":\"utf-8\"}},\"loggers\":{\"database\":{\"handlers\":[\"databaseHandler\",\"consoleHandler\"],\"level\":\"DEBUG\",\"propagate\":false},\"service\":{\"handlers\":[\"serviceHandler\",\"consoleHandler\"],\"level\":\"INFO\",\"propagate\":false},\"connector\":{\"handlers\":[\"connectorHandler\",\"consoleHandler\"],\"level\":\"INFO\",\"propagate\":false},\"converter\":{\"handlers\":[\"converterHandler\",\"consoleHandler\"],\"level\":\"INFO\",\"propagate\":false},\"tb_connection\":{\"handlers\":[\"tb_connectionHandler\",\"consoleHandler\"],\"level\":\"INFO\",\"propagate\":false},\"storage\":{\"handlers\":[\"storageHandler\",\"consoleHandler\"],\"level\":\"INFO\",\"propagate\":false},\"extension\":{\"handlers\":[\"extensionHandler\",\"consoleHandler\"],\"level\":\"INFO\",\"propagate\":false}},\"root\":{\"level\":\"ERROR\",\"handlers\":[\"consoleHandler\"]},\"ts\":1753734478522}",
+      "key" : "logs_configuration",
+      "lastUpdateTs" : 1753734478677,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "mode",
+      "lastUpdateTs" : 1753734478677,
+      "longValue" : null,
+      "strValue" : "basic"
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : "{\"type\":\"memory\",\"read_records_count\":100,\"max_records_count\":100000,\"data_folder_path\":\"./data/\",\"max_file_count\":10,\"max_read_records_count\":10,\"max_records_per_file\":10000,\"data_file_path\":\"./data/data.db\",\"messages_ttl_check_in_hours\":1,\"messages_ttl_in_days\":7,\"ts\":1753734478523}",
+      "key" : "storage_configuration",
+      "lastUpdateTs" : 1753734478677,
+      "longValue" : null,
+      "strValue" : null
+    } ]
+  },
+  "calculatedFields" : [ ]
+}

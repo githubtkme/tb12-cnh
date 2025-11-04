@@ -1,0 +1,1000 @@
+{
+  "entityType" : "RULE_CHAIN",
+  "entity" : {
+    "additionalInfo" : {
+      "description" : ""
+    },
+    "configuration" : null,
+    "debugMode" : false,
+    "externalId" : null,
+    "firstRuleNodeId" : {
+      "entityType" : "RULE_NODE",
+      "id" : "4cc088c1-73d5-11f0-b6be-41fe9fb9d81c"
+    },
+    "id" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "4caefc90-73d5-11f0-b6be-41fe9fb9d81c"
+    },
+    "name" : "Generación de alarmas dispositivos_GATEWAY",
+    "root" : false,
+    "type" : "CORE"
+  },
+  "metaData" : {
+    "connections" : [ {
+      "fromIndex" : 0,
+      "toIndex" : 15,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 0,
+      "type" : "CFE"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 0,
+      "type" : "PLANTA"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 0,
+      "type" : "UPS"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 22,
+      "type" : "CFE"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 22,
+      "type" : "PLANTA"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 22,
+      "type" : "UPS"
+    }, {
+      "fromIndex" : 2,
+      "toIndex" : 4,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 2,
+      "toIndex" : 5,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 3,
+      "toIndex" : 2,
+      "type" : "True"
+    }, {
+      "fromIndex" : 3,
+      "toIndex" : 12,
+      "type" : "False"
+    }, {
+      "fromIndex" : 4,
+      "toIndex" : 9,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 5,
+      "toIndex" : 6,
+      "type" : "True"
+    }, {
+      "fromIndex" : 5,
+      "toIndex" : 21,
+      "type" : "True"
+    }, {
+      "fromIndex" : 6,
+      "toIndex" : 7,
+      "type" : "Created"
+    }, {
+      "fromIndex" : 7,
+      "toIndex" : 8,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 7,
+      "toIndex" : 26,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 8,
+      "toIndex" : 14,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 10,
+      "toIndex" : 7,
+      "type" : "Cleared"
+    }, {
+      "fromIndex" : 11,
+      "toIndex" : 10,
+      "type" : "True"
+    }, {
+      "fromIndex" : 11,
+      "toIndex" : 21,
+      "type" : "True"
+    }, {
+      "fromIndex" : 12,
+      "toIndex" : 4,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 12,
+      "toIndex" : 11,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 13,
+      "toIndex" : 3,
+      "type" : "CFE"
+    }, {
+      "fromIndex" : 13,
+      "toIndex" : 3,
+      "type" : "PLANTA"
+    }, {
+      "fromIndex" : 13,
+      "toIndex" : 3,
+      "type" : "UPS"
+    }, {
+      "fromIndex" : 13,
+      "toIndex" : 23,
+      "type" : "CFE"
+    }, {
+      "fromIndex" : 13,
+      "toIndex" : 23,
+      "type" : "PLANTA"
+    }, {
+      "fromIndex" : 13,
+      "toIndex" : 23,
+      "type" : "UPS"
+    }, {
+      "fromIndex" : 15,
+      "toIndex" : 16,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 16,
+      "toIndex" : 13,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 17,
+      "toIndex" : 1,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 18,
+      "toIndex" : 20,
+      "type" : "True"
+    }, {
+      "fromIndex" : 20,
+      "toIndex" : 19,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 22,
+      "toIndex" : 15,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 23,
+      "toIndex" : 24,
+      "type" : "True"
+    }, {
+      "fromIndex" : 23,
+      "toIndex" : 25,
+      "type" : "False"
+    }, {
+      "fromIndex" : 24,
+      "toIndex" : 4,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 24,
+      "toIndex" : 5,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 25,
+      "toIndex" : 4,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 25,
+      "toIndex" : 11,
+      "type" : "Success"
+    } ],
+    "firstNodeIndex" : 17,
+    "nodes" : [ {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 825,
+        "layoutY" : 101
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "var dispositivo = JSON.parse(metadata.dispositivo);\nvar tipoDispositivo = dispositivo.tipoDispositivo;\nvar umbrales = dispositivo.umbrales;\n\nif(!umbrales){\n    var umbralesGlobales = JSON.parse(metadata.umbrales);\n    umbrales = (dispositivo.subTipo !== undefined) ?\n        umbralesGlobales[dispositivo.dispositivo][tipoDispositivo][dispositivo.subTipo] :\n        umbralesGlobales[dispositivo.dispositivo][tipoDispositivo];\n}\n\nvar v1 = msg.voltaje_1;\nvar v2 = msg.voltaje_2;\nvar v3 = msg.voltaje_3;\n\nvar voltajesCero = (v1 === 0 && v2 === 0 && v3 === 0);\nvar frecuenciaCero = (msg.frecuencia === 0);\n\nvar alarma = null;\nvar umbralAlarma = null;\nvar fueraUmbral = false;\nvar severity = \"normal\";\n\nif (voltajesCero) {\n    \n    severity = \"CRITICAL\";\n    \n    if (tipoDispositivo === \"PLANTA\") {\n        alarma = \"Planta encendida\";\n        umbralAlarma = \"apagado\";\n    } else if (frecuenciaCero) {\n        alarma = \"Corte de energía\";\n        umbralAlarma = \"v_corte\";\n        fueraUmbral = true;\n    }\n}else{\n    // Planta encendida\n    if (tipoDispositivo === \"PLANTA\") {\n        alarma = \"Planta encendida\";\n        umbralAlarma = \"encendido\";\n        fueraUmbral = true;\n        severity = \"CRITICAL\";\n    }else{\n        // Voltaje alto\n        if (v1 > umbrales.v_superior || v2 > umbrales.v_superior || v3 > umbrales.v_superior) {\n            alarma = \"Voltaje alto\";\n            umbralAlarma = \"v_superior\";\n            fueraUmbral = true;\n        }\n    \n        // Voltaje bajo\n        if (v1 < umbrales.v_inferior || v2 < umbrales.v_inferior || v3 < umbrales.v_inferior) {\n            alarma = \"Voltaje bajo\";\n            umbralAlarma = \"v_inferior\";\n            fueraUmbral = true;\n        }\n        \n        if(fueraUmbral){\n            var nivelesAlarma = (dispositivo.umbrales !== undefined) ? dispositivo.umbrales.v_levelsAlarm : umbrales.v_levelsAlarm;\n            \n            if(typeof nivelesAlarma === \"object\"){\n                for (var i = 0; i < nivelesAlarma.length; i++) {\n                    var nivel = nivelesAlarma[i];\n                    if ((v1 > nivel.min && v1 <= nivel.max) ||\n                        (v2 > nivel.min && v2 <= nivel.max) ||\n                        (v3 > nivel.min && v3 <= nivel.max)) {\n                        severity = nivel.level;\n                        break;\n                    }\n                }\n            }else{\n                severity = nivelesAlarma;\n            }\n        }\n    }\n}\n\ndispositivo.umbralAlarma = umbralAlarma;\ndispositivo.alarma = alarma;\ndispositivo.umbrales = umbrales;\ndispositivo.voltaje = {\n    voltaje_1: v1,\n    voltaje_2: v2,\n    voltaje_3: v3\n};\n\nmetadata.dispositivo = JSON.stringify(dispositivo);\nmetadata.fueraUmbralVoltaje = fueraUmbral;\nmetadata.severity = severity;\n\ndelete metadata.umbrales;\n\nreturn {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 0,
+        "failuresEnabled" : false
+      },
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "4cbf0220-73d5-11f0-b6be-41fe9fb9d81c"
+      },
+      "name" : "definirSiEstaFueraDeUmbrales",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 529,
+        "layoutY" : 151
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "var dispositivo = JSON.parse(metadata.dispositivo);\nreturn dispositivo.tipoDispositivo;",
+        "tbelScript" : "function nextRelation(metadata, msg) {\n    return ['one','nine'];\n}\nif(msgType == 'POST_TELEMETRY_REQUEST') {\n    return ['two'];\n}\nreturn nextRelation(metadata, msg);"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 0,
+        "failuresEnabled" : false
+      },
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "4cbf2930-73d5-11f0-b6be-41fe9fb9d81c"
+      },
+      "name" : "tipoDispositivo",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsSwitchNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 2178,
+        "layoutY" : 5
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "function sumarTiempo(ts, cantidad, unidad){\n    \n    var conversion = {\n        \"seg\": 1000,\n        \"min\": 60 * 1000\n    };\n    \n    return ts + (cantidad * conversion[unidad]);\n}\n\nvar dispositivo = JSON.parse(metadata.dispositivo);\nvar tipoDispositivo = dispositivo.tipoDispositivo;\n\nvar histeresis = dispositivo.histeresis;\n\nif(!histeresis){\n    var histeresisGlobal = JSON.parse(metadata.histeresis);\n    histeresis = (dispositivo.subTipo !== undefined) ?\n        histeresisGlobal[dispositivo.dispositivo][tipoDispositivo][dispositivo.subTipo] :\n        histeresisGlobal[dispositivo.dispositivo][tipoDispositivo];\n}\n\nvar umbralAlarma = dispositivo.umbralAlarma;\n\nvar alarma = \"\";\nvar newHisteresis = \"\";\nvar histeresisClear = \"\";\n\n//var mensaje = \"[\" + tipoDispositivo + ((tipoDispositivo === \"UPS\") ? ((dispositivo.subTipo === \"entrada\") ? \"E\" : \"S\") : \"\") + \"]\" + \" - \" + dispositivo.alarma;\n\nvar mensaje = \"[\" + tipoDispositivo + \"]\" + \" - \" + dispositivo.alarma;\n\nvar clave = \"\";\nswitch (umbralAlarma) {\n    case 'v_corte':\n        clave = \"CE\";\n        break;\n    case 'v_superior':\n        clave = \"VA\";\n        break;\n    case 'v_inferior':\n        clave = \"VB\";\n        break;\n    case 'encendido':\n        clave = \"PE\";\n        break;\n}\n\nvar histeresisDispositivo = (msg[\"histeresis\"+clave] === undefined) ? false : msg[\"histeresis\"+clave];\n\nif(!histeresis[umbralAlarma].histeresis){\n    alarma = mensaje;\n    newHisteresis = metadata.ts;\n}else{\n    if(histeresisDispositivo !== false){\n        var tsObjetivo = sumarTiempo(parseInt(histeresisDispositivo), parseInt(histeresis[umbralAlarma].histeresis.time), histeresis[umbralAlarma].histeresis.unit);\n        \n        if(metadata.ts > tsObjetivo){\n            alarma = mensaje;\n        }\n    }else{\n        newHisteresis = metadata.ts;\n    }\n    \n    if(newHisteresis !== false){\n        histeresisClear = false;\n    }\n}\n\nif(newHisteresis !== \"\"){\n    msg.histeresis = newHisteresis;\n}\n\nif(histeresisClear !== \"\"){\n    msg.histeresisClear = histeresisClear;\n}\n\nmsg.nombreAlarma = alarma;\ndispositivo.clave = clave;\n\nmetadata.dispositivo = JSON.stringify(dispositivo);\n\ndelete metadata.histeresis;\n\nreturn {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 1754379297841,
+        "failuresEnabled" : false
+      },
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "4cbf2931-73d5-11f0-b6be-41fe9fb9d81c"
+      },
+      "name" : "evaluarSiElHisteresisSeCumple",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1882,
+        "layoutY" : 56
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "var dispositivo = JSON.parse(metadata.dispositivo);\n\nvar fueraUmbral = JSON.parse(metadata.fueraUmbralVoltaje);\nif(dispositivo.tipoDispositivo === \"PLANTA\"){\n    fueraUmbral = (fueraUmbral !== false);\n    if(dispositivo.umbralAlarma === \"encendido\"){\n        if((msg.alarmaVA !== undefined && msg.alarmaVA !== false) || (msg.alarmaVB !== undefined && msg.alarmaVB !== false)){\n            fueraUmbral = false;\n        }\n    }\n}else{\n    fueraUmbral = (fueraUmbral !== false);\n}\n\nreturn fueraUmbral;",
+        "tbelScript" : "return msg.temperature > 20;"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 1754380325753,
+        "failuresEnabled" : false
+      },
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "4cbf5040-73d5-11f0-b6be-41fe9fb9d81c"
+      },
+      "name" : "fueraDeUmbral",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 2455,
+        "layoutY" : 166
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "var dispositivo = JSON.parse(metadata.dispositivo);\nvar newMSG = {};\n\nif(msg.histeresisClear !== undefined){\n    newMSG[\"histeresisClear\"+dispositivo.clave] = (msg.histeresisClear !== false) ? parseInt(msg.histeresisClear) : msg.histeresisClear;\n}\n\nif(msg.histeresis !== undefined){\n    newMSG[\"histeresis\"+dispositivo.clave] = (msg.histeresis !== false) ? parseInt(msg.histeresis) : msg.histeresis;\n}\n\nif(dispositivo.clave === \"PE\" || dispositivo.clave === \"CE\"){\n    newMSG.histeresisVA = false;\n    newMSG.histeresisVB = false;\n}\n\nreturn {msg: newMSG, metadata: metadata, msgType: \"POST_ATTRIBUTES_REQUEST\"};",
+        "tbelScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : null,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "4cbf5041-73d5-11f0-b6be-41fe9fb9d81c"
+      },
+      "name" : "histeresisControl",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 2454,
+        "layoutY" : 240
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "return (msg.nombreAlarma !== \"\");",
+        "tbelScript" : "return msg.temperature > 20;"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 1754379095024,
+        "failuresEnabled" : false
+      },
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "4cbf7750-73d5-11f0-b6be-41fe9fb9d81c"
+      },
+      "name" : "crearAlarma",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 2702,
+        "layoutY" : 241
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "alarmDetailsBuildJs" : "var details = JSON.parse(metadata.dispositivo);\n\nreturn details;",
+        "alarmDetailsBuildTbel" : "var details = {};\nif (metadata.prevAlarmDetails != null) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    metadata.remove('prevAlarmDetails');\n    //now metadata is the same as it comes IN this rule node\n}\n\n\nreturn details;",
+        "useMessageAlarmData" : false,
+        "overwriteAlarmDetails" : false,
+        "alarmType" : "$[nombreAlarma]",
+        "severity" : "${severity}",
+        "propagate" : true,
+        "relationTypes" : [ "Contains" ],
+        "propagateToOwner" : false,
+        "propagateToOwnerHierarchy" : true,
+        "propagateToTenant" : false,
+        "dynamicSeverity" : true
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 0,
+        "failuresEnabled" : false
+      },
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "4cbf9e60-73d5-11f0-b6be-41fe9fb9d81c"
+      },
+      "name" : "crearAlarma",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.action.TbCreateAlarmNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 2955,
+        "layoutY" : 242
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "var dispositivo = JSON.parse(metadata.dispositivo);\nvar newMSG = {};\nnewMSG[\"alarma\"+dispositivo.clave] = (/ACTIVE/.test(msg.status)) ? msg.startTs : false;\n\nmetadata.alarma = JSON.stringify(msg);\n\nreturn {msg: newMSG, metadata: metadata, msgType: \"POST_ATTRIBUTES_REQUEST\"};",
+        "tbelScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 1751661015927,
+        "failuresEnabled" : false
+      },
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "4cbf9e61-73d5-11f0-b6be-41fe9fb9d81c"
+      },
+      "name" : "alarmaControl",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 3205,
+        "layoutY" : 243
+      },
+      "configuration" : {
+        "scope" : "SERVER_SCOPE",
+        "notifyDevice" : false,
+        "sendAttributesUpdatedNotification" : false,
+        "updateAttributesOnlyOnValueChange" : true,
+        "processingSettings" : {
+          "type" : "ON_EVERY_MESSAGE"
+        }
+      },
+      "configurationVersion" : 3,
+      "createdTime" : 0,
+      "debugSettings" : null,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "4cbfc570-73d5-11f0-b6be-41fe9fb9d81c"
+      },
+      "name" : "alarmaControl",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgAttributesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 2704,
+        "layoutY" : 166
+      },
+      "configuration" : {
+        "scope" : "SERVER_SCOPE",
+        "notifyDevice" : false,
+        "sendAttributesUpdatedNotification" : false,
+        "updateAttributesOnlyOnValueChange" : true,
+        "processingSettings" : {
+          "type" : "ON_EVERY_MESSAGE"
+        }
+      },
+      "configurationVersion" : 3,
+      "createdTime" : 0,
+      "debugSettings" : null,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "4cbfc571-73d5-11f0-b6be-41fe9fb9d81c"
+      },
+      "name" : "histeresisControl",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgAttributesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 2702,
+        "layoutY" : 317
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "alarmDetailsBuildJs" : "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    delete metadata.prevAlarmDetails;\n    //now metadata is the same as it comes IN this rule node\n}\n\n\nreturn details;",
+        "alarmDetailsBuildTbel" : "var details = {};\nif (metadata.prevAlarmDetails != null) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    metadata.remove('prevAlarmDetails');\n    //now metadata is the same as it comes IN this rule node\n}\n\n\nreturn details;",
+        "alarmType" : "$[nombreAlarma]"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : null,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "4cbfec80-73d5-11f0-b6be-41fe9fb9d81c"
+      },
+      "name" : "limpiarAlarma",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.action.TbClearAlarmNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 2459,
+        "layoutY" : 319
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "return (msg.nombreAlarma !== \"\");",
+        "tbelScript" : "return msg.temperature > 20;"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 0,
+        "failuresEnabled" : false
+      },
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "4cc01390-73d5-11f0-b6be-41fe9fb9d81c"
+      },
+      "name" : "limpiarAlarma",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 2180,
+        "layoutY" : 107
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "function sumarTiempo(ts, cantidad, unidad){\n    \n    var conversion = {\n        \"seg\": 1000,\n        \"min\": 60 * 1000\n    };\n    \n    return ts + (cantidad * conversion[unidad]);\n}\n\nfunction obtenerClaveEnTrue(obj){\n    for (var key in obj) {\n        if (obj.hasOwnProperty(key) && obj[key] !== false) {\n            return key;\n        }\n    }\n    return null;\n}\n\nvar dispositivo = JSON.parse(metadata.dispositivo);\nvar tipoDispositivo = dispositivo.tipoDispositivo;\nvar histeresis = dispositivo.histeresis;\n\nif(!histeresis){\n    var histeresisGlobal = JSON.parse(metadata.histeresis);\n    histeresis = (dispositivo.subTipo !== undefined) ?\n        histeresisGlobal[dispositivo.dispositivo][tipoDispositivo][dispositivo.subTipo] :\n        histeresisGlobal[dispositivo.dispositivo][tipoDispositivo];\n}\n\nvar alarma = \"\";\nvar newHisteresis = \"\";\nvar histeresisClear = \"\";\n\nvar objAlarmas = {\n    \"CE\": (msg.alarmaCE !== undefined) ? msg.alarmaCE : false,\n    \"VA\": (msg.alarmaVA !== undefined) ? msg.alarmaVA : false,\n    \"VB\": (msg.alarmaVB !== undefined) ? msg.alarmaVB : false,\n    \"PE\": (msg.alarmaPE !== undefined) ? msg.alarmaPE : false\n}\n\nvar clave = obtenerClaveEnTrue(objAlarmas);\nvar alarmaActiva = (msg[\"alarma\"+clave] !== undefined) ? msg[\"alarma\"+clave] : false;\nvar histeresisDispositivo = (msg[\"histeresisClear\"+clave] !== undefined) ? msg[\"histeresisClear\"+clave] : false;\n//var mensaje = \"[\" + tipoDispositivo + ((tipoDispositivo === \"UPS\") ? ((dispositivo.subTipo === \"entrada\") ? \"E\" : \"S\") : \"\") + (dispositivo.posicion + 1) + \"]\";\nvar mensaje = \"[\" + tipoDispositivo + \"]\";\nvar umbralAlarma = \"corte\";\n\nswitch (clave) {\n    case 'CE':\n        dispositivo.alarma = \"Corte de energía\";\n        mensaje += \" - \" + dispositivo.alarma;\n        umbralAlarma = \"v_corte\";\n        break;\n    case 'VA':\n        dispositivo.alarma = \"Voltaje alto\";\n        mensaje += \" - \" + dispositivo.alarma;\n        umbralAlarma = \"v_superior\";\n        break;\n    case 'VB':\n        dispositivo.alarma = \"Voltaje bajo\";\n        mensaje += \" - \" + dispositivo.alarma;\n        umbralAlarma = \"v_inferior\";\n        break;\n    case 'PE':\n        dispositivo.alarma = \"Planta encendida\";\n        mensaje += \" - \" + dispositivo.alarma;\n        umbralAlarma = \"encendido\";\n        break;\n    default:\n        clave = \"CE\";\n        break;\n}\n\nif(alarmaActiva !== false){\n    if(!histeresis[umbralAlarma].clear){\n        alarma = mensaje;\n        \n        histeresisClear = false;\n        newHisteresis = false;\n    }else{\n        if(histeresisDispositivo !== false){\n            var tsObjetivo = sumarTiempo(parseInt(histeresisDispositivo), parseInt(histeresis[umbralAlarma].clear.time), histeresis[umbralAlarma].clear.unit);\n            \n            if(metadata.ts > tsObjetivo){\n                alarma = mensaje;\n                \n                histeresisClear = false;\n                newHisteresis = false;\n            }\n        }else{\n            histeresisClear = metadata.ts\n        }\n    }\n}else{\n    newHisteresis = false;\n}\n\nif(newHisteresis !== \"\"){\n    msg.histeresis = newHisteresis;\n}\n\nif(histeresisClear !== \"\"){\n    msg.histeresisClear = histeresisClear;\n}\n\nmsg.nombreAlarma = alarma;\ndispositivo.clave = clave;\ndispositivo.umbralAlarma = umbralAlarma;\n\nmetadata.dispositivo = JSON.stringify(dispositivo);\n\ndelete metadata.histeresis;\nreturn {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 1754380185679,
+        "failuresEnabled" : false
+      },
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "4cc01391-73d5-11f0-b6be-41fe9fb9d81c"
+      },
+      "name" : "evaluarSiElHisteresisSeCumple",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1599,
+        "layoutY" : 150
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "var dispositivo = JSON.parse(metadata.dispositivo);\nreturn dispositivo.tipoDispositivo;",
+        "tbelScript" : "function nextRelation(metadata, msg) {\n    return ['one','nine'];\n}\nif(msgType == 'POST_TELEMETRY_REQUEST') {\n    return ['two'];\n}\nreturn nextRelation(metadata, msg);"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : null,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "4cc03aa0-73d5-11f0-b6be-41fe9fb9d81c"
+      },
+      "name" : "tipo",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsSwitchNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 3452,
+        "layoutY" : 245
+      },
+      "configuration" : {
+        "forwardMsgToDefaultRuleChain" : null,
+        "ruleChainId" : "0e3ccfa0-73d5-11f0-b6be-41fe9fb9d81c"
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugSettings" : null,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "4cc03aa1-73d5-11f0-b6be-41fe9fb9d81c"
+      },
+      "name" : "Envio de alarmas",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1076,
+        "layoutY" : 150
+      },
+      "configuration" : {
+        "tellFailureIfAbsent" : false,
+        "fetchTo" : "METADATA",
+        "clientAttributeNames" : [ ],
+        "sharedAttributeNames" : [ ],
+        "serverAttributeNames" : [ "histeresisCE", "histeresisClearCE", "histeresisVA", "histeresisClearVA", "histeresisVB", "histeresisClearVB", "histeresisPE", "histeresisClearPE", "alarmaCE", "alarmaVA", "alarmaVB", "alarmaPE", "histeresisCA", "histeresisClearCA", "histeresisCB", "histeresisClearCB", "alarmaCA", "alarmaCB" ],
+        "latestTsKeyNames" : [ ],
+        "getLatestValueWithTs" : false
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugSettings" : null,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "4cc061b0-73d5-11f0-b6be-41fe9fb9d81c"
+      },
+      "name" : "recuperarControlDeHisteresisYAlarmas",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1324,
+        "layoutY" : 150
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "var arrData = [\"histeresisCE\", \"histeresisClearCE\", \"histeresisVA\", \"histeresisClearVA\", \"histeresisVB\", \"histeresisClearVB\", \"histeresisPE\", \"histeresisClearPE\", \"histeresisCA\", \"histeresisClearCA\", \"histeresisCB\", \"histeresisClearCB\", \"alarmaPE\", \"alarmaCE\", \"alarmaVA\", \"alarmaVB\", \"alarmaCA\", \"alarmaCB\"];\n\nvar obj = {};\nfor(var key in arrData){\n    var newKey = arrData[key];\n    if(metadata[\"ss_\"+newKey] !== undefined){\n        var val;\n        if(parseInt(metadata[\"ss_\"+newKey])){\n            val = parseInt(metadata[\"ss_\"+newKey]);\n        }else{\n            val = ((/false/).test(metadata[\"ss_\"+newKey])) ? false : true;\n        }\n        \n        obj[newKey] = val;\n    }\n}\n\nreturn {msg: obj, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : null,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "4cc088c0-73d5-11f0-b6be-41fe9fb9d81c"
+      },
+      "name" : "generarObjetoDeHisteresisYAlarmas",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 280,
+        "layoutY" : 151
+      },
+      "configuration" : {
+        "dataToFetch" : "ATTRIBUTES",
+        "dataMapping" : {
+          "histeresisGATEGAY" : "histeresis",
+          "umbralesGATEGAY" : "umbrales",
+          "tokenSwagger" : "tokenSwagger",
+          "tokenAPI" : "tokenAPI"
+        },
+        "fetchTo" : "METADATA"
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugSettings" : null,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "4cc088c1-73d5-11f0-b6be-41fe9fb9d81c"
+      },
+      "name" : "histeresisUmbralesTenant",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetTenantAttributeNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 3203,
+        "layoutY" : 160
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "var dispositivo = JSON.parse(metadata.dispositivo);\nreturn (dispositivo.clave === \"CE\" || dispositivo.clave === \"PE\");",
+        "tbelScript" : "return msg.temperature > 20;"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 0,
+        "failuresEnabled" : false
+      },
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "4cc0afd0-73d5-11f0-b6be-41fe9fb9d81c"
+      },
+      "name" : "esCorteoPlantaEncendida",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 3672,
+        "layoutY" : 162
+      },
+      "configuration" : {
+        "ruleChainId" : "21cdfa70-63f1-11ef-90fa-3113fede6056"
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugSettings" : null,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "4cc0afd1-73d5-11f0-b6be-41fe9fb9d81c"
+      },
+      "name" : "PTL",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 3432,
+        "layoutY" : 161
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "metadata = {\n    isNewAlarm: metadata.isNewAlarm,\n    dispositivo: metadata.dispositivo,\n    deviceType: metadata.deviceType,\n    deviceName: metadata.deviceName,\n    ts: metadata.ts\n}\nreturn {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 0,
+        "failuresEnabled" : false
+      },
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "4cc0d6e0-73d5-11f0-b6be-41fe9fb9d81c"
+      },
+      "name" : "eliminarMetadataInnecesaria",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 2717,
+        "layoutY" : 468
+      },
+      "configuration" : {
+        "forwardMsgToDefaultRuleChain" : false,
+        "ruleChainId" : "7d2a7c60-6e2f-11f0-9ba5-395e7a2b1ef2"
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 0,
+        "failuresEnabled" : false
+      },
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "4cc0d6e1-73d5-11f0-b6be-41fe9fb9d81c"
+      },
+      "name" : "Estado dispositivos/activos",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 826,
+        "layoutY" : 205
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "var dispositivo = JSON.parse(metadata.dispositivo);\nvar tipoDispositivo = dispositivo.tipoDispositivo;\nvar umbrales = dispositivo.umbrales;\n\nif(!umbrales){\n    var umbralesGlobales = JSON.parse(metadata.umbrales);\n    umbrales = (dispositivo.subTipo !== undefined) ?\n        umbralesGlobales[dispositivo.dispositivo][tipoDispositivo][dispositivo.subTipo] :\n        umbralesGlobales[dispositivo.dispositivo][tipoDispositivo];\n}\n\nvar c1 = msg.corriente_1;\nvar c2 = msg.corriente_2;\nvar c3 = msg.corriente_3;\n\nvar corrientesCero = (c1 === 0 && c2 === 0 && c3 === 0);\n\nvar alarma = null;\nvar umbralAlarma = null;\nvar fueraUmbral = false;\nvar severity = \"normal\";\n\nif(corrientesCero && tipoDispositivo === \"PLANTA\"){\n    umbralAlarma = \"c_inferior\";\n}else{\n\n    // Corriente alta\n    if (c1 > umbrales.c_superior || c2 > umbrales.c_superior || c3 > umbrales.c_superior) {\n        alarma = \"Corriente alta\";\n        umbralAlarma = \"c_superior\";\n        fueraUmbral = true;\n    }\n    \n    // Corriente baja\n    if (c1 < umbrales.c_inferior || c2 < umbrales.c_inferior || c3 < umbrales.c_inferior) {\n        alarma = \"Corriente baja\";\n        umbralAlarma = \"c_inferior\";\n        fueraUmbral = true;\n    }\n    \n    if(fueraUmbral){\n        var nivelesAlarma = (dispositivo.umbrales !== undefined) ? dispositivo.umbrales.v_levelsAlarm : umbrales.v_levelsAlarm;\n        \n        if(typeof nivelesAlarma === \"object\"){\n            for (var i = 0; i < nivelesAlarma.length; i++) {\n                var nivel = nivelesAlarma[i];\n                if ((c1 > nivel.min && c1 <= nivel.max) ||\n                    (c2 > nivel.min && c2 <= nivel.max) ||\n                    (c3 > nivel.min && c3 <= nivel.max)) {\n                    severity = nivel.level;\n                    break;\n                }\n            }\n        }else{\n            severity = nivelesAlarma;\n        }\n    }\n}\n\ndispositivo.umbralAlarma = umbralAlarma;\ndispositivo.alarma = alarma;\ndispositivo.umbrales = umbrales;\ndispositivo.corrientes = {\n    corriente_1: c1,\n    corriente_2: c2,\n    corriente_3: c3\n};\n\nmetadata.dispositivo = JSON.stringify(dispositivo);\nmetadata.fueraUmbralCorriente = fueraUmbral;\nmetadata.severity = severity;\n\ndelete metadata.umbrales;\n\nreturn {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 1754504138358,
+        "failuresEnabled" : false
+      },
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "4cc20f60-73d5-11f0-b6be-41fe9fb9d81c"
+      },
+      "name" : "definirSiEstaFueraDeUmbrales",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1882,
+        "layoutY" : 234
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "var fueraUmbralCorriente = JSON.parse(metadata.fueraUmbralCorriente);\n\nreturn (fueraUmbralCorriente !== false);",
+        "tbelScript" : "return msg.temperature > 20;"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 0,
+        "failuresEnabled" : false
+      },
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "4cc23670-73d5-11f0-b6be-41fe9fb9d81c"
+      },
+      "name" : "fueraDeUmbral",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 2178,
+        "layoutY" : 183
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "function sumarTiempo(ts, cantidad, unidad){\n    \n    var conversion = {\n        \"seg\": 1000,\n        \"min\": 60 * 1000\n    };\n    \n    return ts + (cantidad * conversion[unidad]);\n}\n\nvar dispositivo = JSON.parse(metadata.dispositivo);\nvar tipoDispositivo = dispositivo.tipoDispositivo;\n\nvar histeresis = dispositivo.histeresis;\n\nif(!histeresis){\n    var histeresisGlobal = JSON.parse(metadata.histeresis);\n    histeresis = (dispositivo.subTipo !== undefined) ?\n        histeresisGlobal[dispositivo.dispositivo][tipoDispositivo][dispositivo.subTipo] :\n        histeresisGlobal[dispositivo.dispositivo][tipoDispositivo];\n}\n\nvar umbralAlarma = dispositivo.umbralAlarma;\n\nvar alarma = \"\";\nvar newHisteresis = \"\";\nvar histeresisClear = \"\";\n\n//var mensaje = \"[\" + tipoDispositivo + ((tipoDispositivo === \"UPS\") ? ((dispositivo.subTipo === \"entrada\") ? \"E\" : \"S\") : \"\") + \"]\" + \" - \" + dispositivo.alarma;\n\nvar mensaje = \"[\" + tipoDispositivo + \"]\" + \" - \" + dispositivo.alarma;\n\nvar clave = \"\";\nswitch (umbralAlarma) {\n    case 'c_superior':\n        clave = \"CA\";\n        break;\n    case 'c_inferior':\n        clave = \"CB\";\n        break;\n}\n\nvar histeresisDispositivo = (msg[\"histeresis\"+clave] === undefined) ? false : msg[\"histeresis\"+clave];\n\nif(!histeresis[umbralAlarma].histeresis){\n    alarma = mensaje;\n    newHisteresis = metadata.ts;\n}else{\n    if(histeresisDispositivo !== false){\n        var tsObjetivo = sumarTiempo(parseInt(histeresisDispositivo), parseInt(histeresis[umbralAlarma].histeresis.time), histeresis[umbralAlarma].histeresis.unit);\n        \n        if(metadata.ts > tsObjetivo){\n            alarma = mensaje;\n        }\n    }else{\n        newHisteresis = metadata.ts;\n    }\n    \n    if(newHisteresis !== false){\n        histeresisClear = false;\n    }\n}\n\nif(newHisteresis !== \"\"){\n    msg.histeresis = newHisteresis;\n}\n\nif(histeresisClear !== \"\"){\n    msg.histeresisClear = histeresisClear;\n}\n\nmsg.nombreAlarma = alarma;\ndispositivo.clave = clave;\n\nmetadata.dispositivo = JSON.stringify(dispositivo);\n\ndelete metadata.histeresis;\n\nreturn {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 0,
+        "failuresEnabled" : false
+      },
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "4cc25d80-73d5-11f0-b6be-41fe9fb9d81c"
+      },
+      "name" : "evaluarSiElHisteresisSeCumple",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 2178,
+        "layoutY" : 288
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "function sumarTiempo(ts, cantidad, unidad){\n    \n    var conversion = {\n        \"seg\": 1000,\n        \"min\": 60 * 1000\n    };\n    \n    return ts + (cantidad * conversion[unidad]);\n}\n\nfunction obtenerClaveEnTrue(obj){\n    for (var key in obj) {\n        if (obj.hasOwnProperty(key) && obj[key] !== false) {\n            return key;\n        }\n    }\n    return null;\n}\n\nvar dispositivo = JSON.parse(metadata.dispositivo);\nvar tipoDispositivo = dispositivo.tipoDispositivo;\nvar histeresis = dispositivo.histeresis;\n\nif(!histeresis){\n    var histeresisGlobal = JSON.parse(metadata.histeresis);\n    histeresis = (dispositivo.subTipo !== undefined) ?\n        histeresisGlobal[dispositivo.dispositivo][tipoDispositivo][dispositivo.subTipo] :\n        histeresisGlobal[dispositivo.dispositivo][tipoDispositivo];\n}\n\nvar alarma = \"\";\nvar newHisteresis = \"\";\nvar histeresisClear = \"\";\n\nvar objAlarmas = {\n    \"CA\": (msg.alarmaCA !== undefined) ? msg.alarmaCA : false,\n    \"CB\": (msg.alarmaCB !== undefined) ? msg.alarmaCB : false\n}\n\nvar clave = obtenerClaveEnTrue(objAlarmas);\nvar alarmaActiva = (msg[\"alarma\"+clave] !== undefined) ? msg[\"alarma\"+clave] : false;\nvar histeresisDispositivo = (msg[\"histeresisClear\"+clave] !== undefined) ? msg[\"histeresisClear\"+clave] : false;\n//var mensaje = \"[\" + tipoDispositivo + ((tipoDispositivo === \"UPS\") ? ((dispositivo.subTipo === \"entrada\") ? \"E\" : \"S\") : \"\") + (dispositivo.posicion + 1) + \"]\";\nvar mensaje = \"[\" + tipoDispositivo + \"]\";\nvar umbralAlarma = \"corte\";\n\nswitch (clave) {\n    case 'CA':\n        dispositivo.alarma = \"Corriente alta\";\n        mensaje += \" - \" + dispositivo.alarma;\n        umbralAlarma = \"c_superior\";\n        break;\n    case 'CB':\n        dispositivo.alarma = \"Corriente baja\";\n        mensaje += \" - \" + dispositivo.alarma;\n        umbralAlarma = \"c_inferior\";\n        break;\n    default:\n        clave = \"CE\";\n        break;\n}\n\nif(alarmaActiva !== false){\n    if(!histeresis[umbralAlarma].clear){\n        alarma = mensaje;\n        \n        histeresisClear = false;\n        newHisteresis = false;\n    }else{\n        if(histeresisDispositivo !== false){\n            var tsObjetivo = sumarTiempo(parseInt(histeresisDispositivo), parseInt(histeresis[umbralAlarma].clear.time), histeresis[umbralAlarma].clear.unit);\n            \n            if(metadata.ts > tsObjetivo){\n                alarma = mensaje;\n                \n                histeresisClear = false;\n                newHisteresis = false;\n            }\n        }else{\n            histeresisClear = metadata.ts\n        }\n    }\n}else{\n    newHisteresis = false;\n}\n\nif(newHisteresis !== \"\"){\n    msg.histeresis = newHisteresis;\n}\n\nif(histeresisClear !== \"\"){\n    msg.histeresisClear = histeresisClear;\n}\n\nmsg.nombreAlarma = alarma;\ndispositivo.clave = clave;\ndispositivo.umbralAlarma = umbralAlarma;\n\nmetadata.dispositivo = JSON.stringify(dispositivo);\n\ndelete metadata.histeresis;\nreturn {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 0,
+        "failuresEnabled" : false
+      },
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "4cc25d81-73d5-11f0-b6be-41fe9fb9d81c"
+      },
+      "name" : "evaluarSiElHisteresisSeCumple",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 3201,
+        "layoutY" : 326
+      },
+      "configuration" : {
+        "forwardMsgToDefaultRuleChain" : false,
+        "ruleChainId" : "52409d80-73d5-11f0-b6be-41fe9fb9d81c"
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 0,
+        "failuresEnabled" : false
+      },
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "4cc28490-73d5-11f0-b6be-41fe9fb9d81c"
+      },
+      "name" : "ControlTorreta",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
+    } ],
+    "ruleChainConnections" : null
+  },
+  "relations" : [ {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "476699a0-73d5-11f0-b6be-41fe9fb9d81c"
+    },
+    "to" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "4caefc90-73d5-11f0-b6be-41fe9fb9d81c"
+    },
+    "type" : "Uses",
+    "typeGroup" : "COMMON",
+    "version" : 2789
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "4caefc90-73d5-11f0-b6be-41fe9fb9d81c"
+    },
+    "to" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "0e3ccfa0-73d5-11f0-b6be-41fe9fb9d81c"
+    },
+    "type" : "Uses",
+    "typeGroup" : "COMMON",
+    "version" : 3354
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "4caefc90-73d5-11f0-b6be-41fe9fb9d81c"
+    },
+    "to" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "21cdfa70-63f1-11ef-90fa-3113fede6056"
+    },
+    "type" : "Uses",
+    "typeGroup" : "COMMON",
+    "version" : 3360
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "4caefc90-73d5-11f0-b6be-41fe9fb9d81c"
+    },
+    "to" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "52409d80-73d5-11f0-b6be-41fe9fb9d81c"
+    },
+    "type" : "Uses",
+    "typeGroup" : "COMMON",
+    "version" : 3369
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "4caefc90-73d5-11f0-b6be-41fe9fb9d81c"
+    },
+    "to" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "7d2a7c60-6e2f-11f0-9ba5-395e7a2b1ef2"
+    },
+    "type" : "Uses",
+    "typeGroup" : "COMMON",
+    "version" : 3363
+  } ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

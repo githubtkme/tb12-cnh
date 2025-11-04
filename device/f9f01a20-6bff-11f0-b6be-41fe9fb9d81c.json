@@ -1,0 +1,107 @@
+{
+  "entityType" : "DEVICE",
+  "entity" : {
+    "additionalInfo" : {
+      "lastConnectedGateway" : "5454cf60-6bf1-11f0-b6be-41fe9fb9d81c"
+    },
+    "customerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "13814000-1dd2-11b2-8080-808080808080"
+    },
+    "deviceData" : {
+      "configuration" : {
+        "type" : "DEFAULT"
+      },
+      "transportConfiguration" : {
+        "type" : "DEFAULT"
+      }
+    },
+    "deviceProfileId" : {
+      "entityType" : "DEVICE_PROFILE",
+      "id" : "206d5860-6bf2-11f0-b6be-41fe9fb9d81c"
+    },
+    "externalId" : null,
+    "firmwareId" : null,
+    "id" : {
+      "entityType" : "DEVICE",
+      "id" : "f9f01a20-6bff-11f0-b6be-41fe9fb9d81c"
+    },
+    "label" : "CFE #20",
+    "name" : "CPM50-1",
+    "ownerId" : null,
+    "softwareId" : null,
+    "type" : "CPMDevice"
+  },
+  "credentials" : {
+    "credentialsId" : "op6tlOtrasleO5l9bG0F",
+    "credentialsType" : "ACCESS_TOKEN",
+    "credentialsValue" : null
+  },
+  "relations" : [ {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "DEVICE",
+      "id" : "5454cf60-6bf1-11f0-b6be-41fe9fb9d81c"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "f9f01a20-6bff-11f0-b6be-41fe9fb9d81c"
+    },
+    "type" : "Created",
+    "typeGroup" : "COMMON",
+    "version" : 626
+  } ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "active",
+      "lastUpdateTs" : 1758444388895,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "inactivityAlarmTime",
+      "lastUpdateTs" : 1758444388849,
+      "longValue" : 1758444388849,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "lastActivityTime",
+      "lastUpdateTs" : 1758443774013,
+      "longValue" : 1758443771935,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "lastConnectTime",
+      "lastUpdateTs" : 1758443728624,
+      "longValue" : 1758443728624,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "lastDisconnectTime",
+      "lastUpdateTs" : 1758443719618,
+      "longValue" : 1758443719618,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : "{\"v_superior\":286,\"v_inferior\":234,\"v_levelsAlarm\":[{\"min\":221,\"max\":234,\"level\":\"WARNING\"},{\"min\":0,\"max\":221,\"level\":\"CRITICAL\"},{\"min\":286,\"max\":312,\"level\":\"WARNING\"},{\"min\":312,\"max\":1000000,\"level\":\"CRITICAL\"}],\"c_superior\":17.6,\"c_inferior\":1,\"c_levelsAlarm\":[{\"min\":0,\"max\":1,\"level\":\"WARNING\"},{\"min\":-1,\"max\":0,\"level\":\"CRITICAL\"},{\"min\":17.6,\"max\":20.9,\"level\":\"WARNING\"},{\"min\":20.9,\"max\":1000000,\"level\":\"CRITICAL\"}]}",
+      "key" : "umbrales",
+      "lastUpdateTs" : 1754601349238,
+      "longValue" : null,
+      "strValue" : null
+    } ],
+    "SHARED_SCOPE" : [ ]
+  },
+  "calculatedFields" : [ ]
+}
