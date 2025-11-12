@@ -73,10 +73,6 @@
       "toIndex" : 6,
       "type" : "True"
     }, {
-      "fromIndex" : 5,
-      "toIndex" : 21,
-      "type" : "True"
-    }, {
       "fromIndex" : 6,
       "toIndex" : 7,
       "type" : "Created"
@@ -99,10 +95,6 @@
     }, {
       "fromIndex" : 11,
       "toIndex" : 10,
-      "type" : "True"
-    }, {
-      "fromIndex" : 11,
-      "toIndex" : 21,
       "type" : "True"
     }, {
       "fromIndex" : 12,
@@ -716,7 +708,8 @@
         "layoutY" : 162
       },
       "configuration" : {
-        "ruleChainId" : "21cdfa70-63f1-11ef-90fa-3113fede6056"
+        "forwardMsgToDefaultRuleChain" : null,
+        "ruleChainId" : "97abed40-69a6-11f0-b6be-41fe9fb9d81c"
       },
       "configurationVersion" : 1,
       "createdTime" : 0,
@@ -767,7 +760,7 @@
       },
       "configuration" : {
         "forwardMsgToDefaultRuleChain" : false,
-        "ruleChainId" : "7d2a7c60-6e2f-11f0-9ba5-395e7a2b1ef2"
+        "ruleChainId" : "97abed40-69a6-11f0-b6be-41fe9fb9d81c"
       },
       "configurationVersion" : 1,
       "createdTime" : 0,
@@ -949,11 +942,11 @@
     },
     "to" : {
       "entityType" : "RULE_CHAIN",
-      "id" : "0e3ccfa0-73d5-11f0-b6be-41fe9fb9d81c"
+      "id" : "97abed40-69a6-11f0-b6be-41fe9fb9d81c"
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 3354
+    "version" : 4216
   }, {
     "additionalInfo" : null,
     "from" : {
@@ -962,11 +955,11 @@
     },
     "to" : {
       "entityType" : "RULE_CHAIN",
-      "id" : "21cdfa70-63f1-11ef-90fa-3113fede6056"
+      "id" : "0e3ccfa0-73d5-11f0-b6be-41fe9fb9d81c"
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 3360
+    "version" : 4206
   }, {
     "additionalInfo" : null,
     "from" : {
@@ -979,20 +972,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 3369
-  }, {
-    "additionalInfo" : null,
-    "from" : {
-      "entityType" : "RULE_CHAIN",
-      "id" : "4caefc90-73d5-11f0-b6be-41fe9fb9d81c"
-    },
-    "to" : {
-      "entityType" : "RULE_CHAIN",
-      "id" : "7d2a7c60-6e2f-11f0-9ba5-395e7a2b1ef2"
-    },
-    "type" : "Uses",
-    "typeGroup" : "COMMON",
-    "version" : 3363
+    "version" : 4222
   } ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]

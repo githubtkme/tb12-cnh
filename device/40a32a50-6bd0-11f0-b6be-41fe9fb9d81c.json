@@ -66,20 +66,20 @@
       "longValue" : null,
       "strValue" : null
     }, {
-      "booleanValue" : false,
+      "booleanValue" : null,
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "histeresisClearHB",
-      "lastUpdateTs" : 1762966475212,
-      "longValue" : null,
+      "lastUpdateTs" : 1762966520736,
+      "longValue" : 1762966519937,
       "strValue" : null
     }, {
-      "booleanValue" : false,
+      "booleanValue" : null,
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "histeresisClearTB",
-      "lastUpdateTs" : 1762966475210,
-      "longValue" : null,
+      "lastUpdateTs" : 1762966520737,
+      "longValue" : 1762966519937,
       "strValue" : null
     }, {
       "booleanValue" : false,
