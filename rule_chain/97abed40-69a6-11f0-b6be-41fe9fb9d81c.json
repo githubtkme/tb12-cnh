@@ -333,6 +333,19 @@
     "type" : "Uses",
     "typeGroup" : "COMMON",
     "version" : 235
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "bab91c80-73d4-11f0-b6be-41fe9fb9d81c"
+    },
+    "to" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "97abed40-69a6-11f0-b6be-41fe9fb9d81c"
+    },
+    "type" : "Uses",
+    "typeGroup" : "COMMON",
+    "version" : 4070
   } ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]

@@ -54,7 +54,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "alarmaFA",
-      "lastUpdateTs" : 1762231229168,
+      "lastUpdateTs" : 1762951505103,
       "longValue" : null,
       "strValue" : null
     }, {
@@ -70,7 +70,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "histeresisFA",
-      "lastUpdateTs" : 1762288245317,
+      "lastUpdateTs" : 1762966145307,
       "longValue" : null,
       "strValue" : null
     }, {

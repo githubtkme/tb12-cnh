@@ -41,10 +41,6 @@
       "toIndex" : 2,
       "type" : "True"
     }, {
-      "fromIndex" : 3,
-      "toIndex" : 35,
-      "type" : "True"
-    }, {
       "fromIndex" : 4,
       "toIndex" : 5,
       "type" : "Cleared"
@@ -53,20 +49,12 @@
       "toIndex" : 6,
       "type" : "Success"
     }, {
-      "fromIndex" : 5,
-      "toIndex" : 38,
-      "type" : "Success"
-    }, {
       "fromIndex" : 6,
       "toIndex" : 8,
       "type" : "Success"
     }, {
       "fromIndex" : 7,
       "toIndex" : 4,
-      "type" : "True"
-    }, {
-      "fromIndex" : 7,
-      "toIndex" : 35,
       "type" : "True"
     }, {
       "fromIndex" : 9,
@@ -224,10 +212,6 @@
       "fromIndex" : 36,
       "toIndex" : 21,
       "type" : "False"
-    }, {
-      "fromIndex" : 36,
-      "toIndex" : 37,
-      "type" : "True"
     } ],
     "firstNodeIndex" : 26,
     "nodes" : [ {
@@ -1223,7 +1207,7 @@
       },
       "configuration" : {
         "forwardMsgToDefaultRuleChain" : false,
-        "ruleChainId" : "7d2a7c60-6e2f-11f0-9ba5-395e7a2b1ef2"
+        "ruleChainId" : "97abed40-69a6-11f0-b6be-41fe9fb9d81c"
       },
       "configurationVersion" : 1,
       "createdTime" : 0,
@@ -1274,7 +1258,7 @@
       },
       "configuration" : {
         "forwardMsgToDefaultRuleChain" : false,
-        "ruleChainId" : "a4491b10-7250-11f0-9ba5-395e7a2b1ef2"
+        "ruleChainId" : "97abed40-69a6-11f0-b6be-41fe9fb9d81c"
       },
       "configurationVersion" : 1,
       "createdTime" : 0,
@@ -1297,7 +1281,7 @@
       },
       "configuration" : {
         "forwardMsgToDefaultRuleChain" : false,
-        "ruleChainId" : "f0efe9b0-732e-11f0-9ba5-395e7a2b1ef2"
+        "ruleChainId" : "97abed40-69a6-11f0-b6be-41fe9fb9d81c"
       },
       "configurationVersion" : 1,
       "createdTime" : 0,
@@ -1336,24 +1320,11 @@
     },
     "to" : {
       "entityType" : "RULE_CHAIN",
-      "id" : "a4491b10-7250-11f0-9ba5-395e7a2b1ef2"
+      "id" : "97abed40-69a6-11f0-b6be-41fe9fb9d81c"
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 2067
-  }, {
-    "additionalInfo" : null,
-    "from" : {
-      "entityType" : "RULE_CHAIN",
-      "id" : "bab91c80-73d4-11f0-b6be-41fe9fb9d81c"
-    },
-    "to" : {
-      "entityType" : "RULE_CHAIN",
-      "id" : "f0efe9b0-732e-11f0-9ba5-395e7a2b1ef2"
-    },
-    "type" : "Uses",
-    "typeGroup" : "COMMON",
-    "version" : 2069
+    "version" : 4070
   }, {
     "additionalInfo" : null,
     "from" : {
@@ -1366,20 +1337,7 @@
     },
     "type" : "Uses",
     "typeGroup" : "COMMON",
-    "version" : 2036
-  }, {
-    "additionalInfo" : null,
-    "from" : {
-      "entityType" : "RULE_CHAIN",
-      "id" : "bab91c80-73d4-11f0-b6be-41fe9fb9d81c"
-    },
-    "to" : {
-      "entityType" : "RULE_CHAIN",
-      "id" : "7d2a7c60-6e2f-11f0-9ba5-395e7a2b1ef2"
-    },
-    "type" : "Uses",
-    "typeGroup" : "COMMON",
-    "version" : 2064
+    "version" : 4035
   } ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]

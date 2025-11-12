@@ -70,16 +70,16 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "histeresisClearHB",
-      "lastUpdateTs" : 1762288530473,
-      "longValue" : 1762288529987,
+      "lastUpdateTs" : 1762966280898,
+      "longValue" : 1762966279923,
       "strValue" : null
     }, {
       "booleanValue" : null,
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "histeresisClearTB",
-      "lastUpdateTs" : 1762288530472,
-      "longValue" : 1762288529987,
+      "lastUpdateTs" : 1762966280893,
+      "longValue" : 1762966279923,
       "strValue" : null
     }, {
       "booleanValue" : false,
